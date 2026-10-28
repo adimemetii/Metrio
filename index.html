@@ -1,22 +1,30 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0B1220">
-  <meta name="description" content="Metrio helps companies analyze data, predict what is next, and make clearer growth decisions—with Shopify analytics as a specialist offer.">
-  <meta property="og:title" content="Metrio | Data & AI systems for clearer decisions">
-  <meta property="og:description" content="Practical dashboards, predictive models, data quality, and Shopify growth analytics for ambitious companies.">
+  <meta id="meta-description" name="description" content="Metrio helps e-commerce brands analyze performance, predict what is next, and turn scattered data into practical growth actions.">
+  <meta property="og:title" content="Metrio | Data &amp; AI systems for clearer decisions">
+  <meta property="og:description" content="Practical dashboards, predictive models, data quality, and e-commerce growth analytics for ambitious companies.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="logo.png">
+  <meta property="og:image" content="/metrio-icon.svg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="/metrio-icon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="shortcut icon" href="/favicon.ico?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="./metrio-icon.svg">
+  <link rel="icon" href="./favicon.ico?v=2" sizes="any">
   <link rel="manifest" href="site.webmanifest">
-  <title>Metrio | Shopify data & AI for more sales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title id="page-title">Metrio | Data &amp; AI for clearer decisions</title>
 
   <style>
     :root {
@@ -38,7 +46,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 104px; }
     body {
       min-width: 320px;
       margin: 0;
@@ -49,105 +57,78 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
+    html[dir="rtl"] body { font-family: "Noto Sans Arabic", Inter, ui-sans-serif, system-ui, sans-serif; }
     body::before { position: fixed; inset: 0; z-index: -1; pointer-events: none; content: ""; opacity: 0.18; background-image: linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px); background-size: 64px 64px; mask-image: linear-gradient(to bottom, black, transparent 73%); }
     ::selection { color: #fff; background: rgba(37, 99, 235, 0.8); }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
-    button, input, textarea { font: inherit; }
+    button, input, textarea, select { font: inherit; }
     button, a { -webkit-tap-highlight-color: transparent; }
 
-    .skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; padding: 0.7rem 1rem; color: #fff; background: var(--blue); border-radius: 999px; transform: translateY(-180%); transition: transform 180ms ease; }
+    .skip-link { position: fixed; inset-block-start: 1rem; inset-inline-start: 1rem; z-index: 100; padding: 0.7rem 1rem; color: #fff; background: var(--blue); border-radius: 999px; transform: translateY(-180%); transition: transform 180ms ease; }
     .skip-link:focus { transform: translateY(0); }
     .container { width: min(var(--container), calc(100% - 2.5rem)); margin-inline: auto; }
 
     .site-header { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid transparent; background: rgba(11, 18, 32, 0.66); backdrop-filter: blur(18px); transition: border-color 220ms ease, background 220ms ease; }
     .site-header.scrolled { border-color: var(--line); background: rgba(11, 18, 32, 0.9); }
-    .navbar { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 1.25rem; }
-    .brand { display: inline-flex; align-items: center; gap: 0.65rem; min-width: max-content; }
-    .brand-mark { display: block; width: auto; height: 48px; max-width: 220px; object-fit: contain; object-position: center; border-radius: 14px; background: #0b1220; border: 1px solid #1e2a44; box-shadow: 0 0 24px rgba(34, 211, 238, 0.22); }
-    .brand-copy { display: grid; gap: 0.03rem; line-height: 1; }
-    .brand-name { color: #fff; font-size: 26px; font-weight: 800; letter-spacing: -0.05em; }
-    .brand-tag { color: var(--cyan); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
-    .nav-links { display: flex; align-items: center; gap: 1.75rem; margin-left: auto; }
+    .navbar { display: flex; min-height: 96px; align-items: center; justify-content: space-between; gap: 1.25rem; }
+    .brand { display: inline-flex; align-items: center; gap: 14px; min-width: max-content; direction: ltr; }
+    .brand-mark { display: block; width: auto; height: 84px; object-fit: contain; object-position: center; }
+    .brand-name { color: #fff; font-family: Inter, system-ui, sans-serif; font-size: 34px; font-weight: 700; line-height: 1; letter-spacing: -0.01em; }
+    .nav-links { display: flex; align-items: center; gap: 1.25rem; margin-inline-start: auto; }
     .nav-links a { position: relative; color: var(--muted-strong); font-size: 0.9rem; font-weight: 600; transition: color 180ms ease; }
-    .nav-links > a:not(.button)::after { position: absolute; right: 0; bottom: -0.55rem; left: 0; height: 2px; content: ""; background: linear-gradient(90deg, var(--blue), var(--cyan)); border-radius: 999px; transform: scaleX(0); transform-origin: right; transition: transform 180ms ease; }
+    .nav-links > a:not(.button)::after { position: absolute; inset-inline: 0; inset-block-end: -0.55rem; height: 2px; content: ""; background: linear-gradient(90deg, var(--blue), var(--cyan)); border-radius: 999px; transform: scaleX(0); transform-origin: right; transition: transform 180ms ease; }
     .nav-links a:hover, .nav-links a.active { color: #fff; }
     .nav-links > a:not(.button).active::after, .nav-links > a:not(.button):hover::after { transform: scaleX(1); transform-origin: left; }
+    .language-switcher { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.38rem 0.62rem; color: var(--muted-strong); background: rgba(15, 28, 49, 0.72); border: 1px solid var(--line); border-radius: 999px; }
+    .language-switcher svg { width: 16px; flex: 0 0 auto; color: var(--cyan); }
+    .language-switcher select { max-width: 82px; color: #fff; background: transparent; border: 0; outline: 0; cursor: pointer; }
+    .language-switcher option { color: #0b1220; background: #fff; }
 
-    .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 0.55rem; padding: 0.8rem 1.15rem; color: #fff; font-size: 0.92rem; font-weight: 750; border: 1px solid transparent; border-radius: 999px; cursor: pointer; transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease; }
+    .button { position: relative; isolation: isolate; display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 0.55rem; padding: 12px 26px; color: #fff; font-family: Inter, system-ui, sans-serif; font-size: 15px; font-weight: 600; border: 1px solid transparent; border-radius: 999px; cursor: pointer; overflow: hidden; transition: transform 180ms ease, box-shadow 180ms ease; }
     .button:hover { transform: translateY(-2px); }
-    .button:focus-visible, .nav-links a:focus-visible, .mobile-toggle:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid rgba(34, 211, 238, 0.55); outline-offset: 4px; }
-    .button-primary { background: linear-gradient(115deg, var(--blue), #3577ef 50%, var(--cyan)); box-shadow: 0 12px 34px rgba(37, 99, 235, 0.28); }
-    .button-primary:hover { box-shadow: 0 15px 42px rgba(34, 211, 238, 0.2); }
+    .button:focus-visible, .nav-links a:focus-visible, .mobile-toggle:focus-visible, summary:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid rgba(34, 211, 238, 0.55); outline-offset: 4px; }
+    .button-primary { color: #fff; background: linear-gradient(90deg, #2563eb, #22d3ee); border: none; box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35); }
+    .button-primary::before, .button-primary::after { display: none; content: none; }
     .button-secondary { color: var(--text); background: rgba(15, 28, 49, 0.7); border-color: var(--line-bright); }
     .button-secondary:hover { background: rgba(26, 46, 78, 0.9); border-color: rgba(34, 211, 238, 0.55); }
     .button-small { min-height: 42px; padding: 0.65rem 1rem; font-size: 0.86rem; }
-    .nav-audit-button { min-height: 48px; padding: 14px 28px; white-space: nowrap; }
+    .nav-audit-button { white-space: nowrap; }
+    .arrow-icon { display: inline-block; }
     .mobile-toggle { display: none; width: 42px; height: 42px; padding: 0; color: #fff; background: var(--surface-soft); border: 1px solid var(--line); border-radius: 12px; cursor: pointer; }
     .mobile-toggle svg { width: 21px; margin: auto; }
 
-    .hero { position: relative; padding: 5.4rem 0 4.2rem; }
-    .hero::after { position: absolute; top: 4rem; right: 0; width: 36rem; height: 36rem; content: ""; pointer-events: none; background: radial-gradient(circle, rgba(37, 99, 235, 0.16), transparent 68%); filter: blur(10px); }
+    .hero { position: relative; padding: 5.2rem 0 4.8rem; }
+    .hero::after { position: absolute; inset-block-start: 4rem; inset-inline-end: 0; width: 36rem; height: 36rem; content: ""; pointer-events: none; background: radial-gradient(circle, rgba(37, 99, 235, 0.16), transparent 68%); filter: blur(10px); }
     .hero-grid { position: relative; z-index: 1; display: grid; align-items: center; gap: 3.5rem; }
     .hero-grid > * { min-width: 0; }
-    .hero-copy { min-width: 0; max-width: 100%; }
-    .eyebrow, .section-kicker { display: inline-flex; width: fit-content; max-width: 100%; align-items: center; gap: 0.5rem; padding: 0.42rem 0.75rem; color: #9edfff; font-size: 0.73rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; background: rgba(37, 99, 235, 0.12); border: 1px solid rgba(96, 165, 250, 0.25); border-radius: 999px; }
-    .eyebrow::before { width: 6px; height: 6px; content: ""; background: var(--cyan); border-radius: 50%; box-shadow: 0 0 12px var(--cyan); }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 { width: 100%; max-width: 720px; margin: 1.4rem 0 1.25rem; font-size: clamp(2.8rem, 7.1vw, 5.6rem); line-height: 0.99; letter-spacing: -0.075em; overflow-wrap: anywhere; }
+    .hero-copy { min-width: 0; max-width: 100%; text-align: start; }
+    .eyebrow, .section-kicker { display: inline-flex; width: fit-content; max-width: 100%; align-items: center; gap: 0.5rem; padding: 0.42rem 0.75rem; color: #9edfff; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(96, 165, 250, 0.2); border-radius: 999px; }
+    .eyebrow::before { width: 6px; height: 6px; content: ""; background: var(--cyan); border-radius: 50%; box-shadow: 0 0 8px var(--cyan); }
+    h1, h2, h3, p { margin-block-start: 0; }
+    h1 { width: 100%; max-width: 660px; margin-block: 1.2rem 1.25rem; font-size: clamp(32px, 4.5vw, 56px); font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; overflow-wrap: normal; }
     .gradient-text { color: var(--cyan); background: linear-gradient(110deg, #fff 4%, #9edfff 49%, var(--cyan) 90%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero-copy > p:not(.hero-note) { width: 100%; max-width: 610px; color: var(--muted-strong); font-size: clamp(1rem, 1.5vw, 1.18rem); line-height: 1.75; overflow-wrap: anywhere; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 2rem; }
-    .hero-note { display: flex; align-items: center; gap: 0.5rem; margin: 1.15rem 0 0; color: var(--muted); font-size: 0.84rem; }
+    .hero-copy > p:not(.hero-note) { width: 100%; max-width: 560px; color: #94a3b8; font-size: clamp(17px, 1.5vw, 18px); line-height: 1.7; overflow-wrap: anywhere; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-block-start: 2rem; }
+    .hero-note { display: flex; align-items: center; gap: 0.5rem; margin-block: 1.15rem 0; color: var(--muted); font-size: 0.84rem; }
     .hero-note svg { flex: 0 0 auto; color: var(--green); }
 
-    .dashboard-shell { position: relative; width: 100%; max-width: 100%; padding: 0.75rem; background: linear-gradient(145deg, rgba(34, 211, 238, 0.22), rgba(37, 99, 235, 0.08) 42%, rgba(15, 23, 42, 0.3)); border: 1px solid rgba(96, 165, 250, 0.28); border-radius: var(--radius-lg); box-shadow: var(--shadow), 0 0 80px rgba(37, 99, 235, 0.13); transform: rotate(1.25deg); }
-    .dashboard-shell::before { position: absolute; inset: 1.5rem; z-index: -1; content: ""; background: rgba(34, 211, 238, 0.16); filter: blur(46px); }
-    .dashboard-window { min-width: 0; overflow: hidden; background: #0e192c; border: 1px solid rgba(148, 163, 184, 0.14); border-radius: 21px; transform: rotate(-1.25deg); }
-    .window-bar { display: flex; align-items: center; justify-content: space-between; padding: 0.78rem 1rem; border-bottom: 1px solid var(--line); }
-    .window-dots { display: flex; gap: 0.32rem; }
-    .window-dots span { width: 7px; height: 7px; background: #334155; border-radius: 50%; }
-    .window-dots span:first-child { background: #fb7185; }
-    .window-dots span:nth-child(2) { background: #fbbf24; }
-    .window-dots span:last-child { background: #34d399; }
-    .window-label { color: #7689a4; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
-    .dashboard-body { display: grid; grid-template-columns: 54px minmax(0, 1fr); min-height: 390px; min-width: 0; }
-    .dashboard-sidebar { display: grid; align-content: start; justify-items: center; gap: 1.15rem; padding: 1.15rem 0.5rem; border-right: 1px solid var(--line); }
-    .side-icon { display: grid; width: 28px; height: 28px; place-items: center; color: #59708f; border-radius: 8px; }
-    .side-icon.active { color: #fff; background: linear-gradient(135deg, var(--blue), #216cce); box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35); }
-    .side-icon svg { width: 15px; }
-    .dashboard-main { min-width: 0; padding: 1rem; }
-    .dashboard-heading { display: flex; align-items: start; justify-content: space-between; gap: 0.75rem; margin-bottom: 0.85rem; }
-    .dashboard-heading h3 { margin: 0; font-size: 0.92rem; letter-spacing: -0.02em; }
-    .dashboard-heading p { margin: 0.18rem 0 0; color: #66809f; font-size: 0.68rem; }
-    .live-pill { display: inline-flex; align-items: center; gap: 0.32rem; padding: 0.28rem 0.46rem; color: #9bf0cf; font-size: 0.58rem; font-weight: 800; background: rgba(52, 211, 153, 0.1); border: 1px solid rgba(52, 211, 153, 0.22); border-radius: 999px; }
-    .live-pill::before { width: 5px; height: 5px; content: ""; background: var(--green); border-radius: 50%; box-shadow: 0 0 8px var(--green); }
-    .metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.55rem; }
-    .metric-card { padding: 0.7rem; background: rgba(18, 32, 55, 0.72); border: 1px solid rgba(148, 163, 184, 0.12); border-radius: 11px; }
-    .metric-card p { margin: 0; color: #6f86a4; font-size: 0.58rem; }
-    .metric-card strong { display: block; margin-top: 0.24rem; font-size: 1rem; letter-spacing: -0.04em; }
-    .metric-card small { color: #5ee0b0; font-size: 0.56rem; font-weight: 700; }
-    .chart-panel { margin-top: 0.65rem; padding: 0.8rem; background: rgba(18, 32, 55, 0.72); border: 1px solid rgba(148, 163, 184, 0.12); border-radius: 13px; }
-    .chart-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.4rem; }
-    .chart-heading span { color: #8395ad; font-size: 0.6rem; font-weight: 700; }
-    .chart-heading strong { color: #d8e8fa; font-size: 0.7rem; }
-    .chart { width: 100%; height: 116px; }
-    .chart-grid { stroke: rgba(148, 163, 184, 0.12); stroke-dasharray: 3 6; stroke-width: 1; }
-    .chart-area { fill: url(#chartArea); opacity: 0.22; }
-    .chart-line { fill: none; stroke: url(#chartLine); stroke-linecap: round; stroke-linejoin: round; stroke-width: 3; stroke-dasharray: 1; stroke-dashoffset: 1; animation: drawLine 2.2s 0.45s ease forwards; }
-    .chart-dot { fill: #22d3ee; stroke: #0e192c; stroke-width: 3; filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.9)); }
-    .chart-labels { display: flex; justify-content: space-between; margin-top: -0.1rem; color: #5d718d; font-size: 0.53rem; }
-    .dashboard-bottom { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 0.65rem; margin-top: 0.65rem; }
-    .bar-panel, .insight-panel { padding: 0.75rem; background: rgba(18, 32, 55, 0.72); border: 1px solid rgba(148, 163, 184, 0.12); border-radius: 13px; }
-    .mini-heading { display: flex; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.62rem; color: #8395ad; font-size: 0.6rem; font-weight: 700; }
-    .mini-heading b { color: #a9f1ff; }
-    .bar-row { display: grid; grid-template-columns: 46px 1fr 22px; align-items: center; gap: 0.4rem; margin-top: 0.45rem; color: #6f86a4; font-size: 0.53rem; }
-    .bar-track { height: 5px; overflow: hidden; background: rgba(148, 163, 184, 0.12); border-radius: 999px; }
-    .bar-fill { display: block; width: var(--bar-width); height: 100%; background: linear-gradient(90deg, var(--blue), var(--cyan)); border-radius: inherit; transform-origin: left; animation: growBar 1.4s 0.5s ease both; }
-    .bar-row b { color: #b9cbe0; font-size: 0.55rem; text-align: right; }
-    .insight-panel { display: grid; align-content: space-between; background: linear-gradient(145deg, rgba(37, 99, 235, 0.2), rgba(34, 211, 238, 0.06)); }
-    .insight-panel p { margin: 0.4rem 0 0; color: #d3e1f2; font-size: 0.63rem; line-height: 1.55; }
-    .insight-panel strong { color: #a9f1ff; font-size: 0.68rem; }
+    .hero-visual { position: relative; min-height: 500px; display: grid; place-items: center; overflow: hidden; border-radius: 28px; direction: ltr; }
+    .hero-visual::before { position: absolute; inset: 10% 8%; content: ""; pointer-events: none; background: radial-gradient(circle, rgba(34, 211, 238, 0.18), transparent 65%); filter: blur(22px); }
+    .visual-network { position: absolute; inset: 4% 0; width: 100%; height: 90%; opacity: 0.42; pointer-events: none; animation: networkDrift 16s ease-in-out infinite; }
+    .visual-network svg { width: 100%; height: 100%; }
+    .network-lines { fill: none; stroke: rgba(148, 163, 184, 0.18); stroke-width: 1; stroke-dasharray: 3 12; animation: networkDash 20s linear infinite; }
+    .network-nodes circle { fill: #22d3ee; opacity: 0.65; transform-box: fill-box; transform-origin: center; animation: nodePulse 4s ease-in-out infinite; }
+    .data-card { position: absolute; z-index: 3; display: grid; gap: 0.1rem; padding: 14px 18px; color: #fff; background: rgba(18, 32, 55, 0.5); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; box-shadow: 0 14px 35px rgba(0, 0, 0, 0.22); animation: cardFloat 6s ease-in-out infinite; }
+    .data-card strong { font-size: 22px; line-height: 1.1; letter-spacing: -0.03em; }
+    .data-card span { color: #94a3b8; font-size: 12px; line-height: 1.35; }
+    .data-card.revenue { inset-block-start: 13%; inset-inline-start: 5%; animation-delay: -1.2s; }
+    .data-card.roas { inset-block-start: 34%; inset-inline-end: 1%; animation-delay: -3.2s; }
+    .data-card.churn { inset-block-end: 21%; inset-inline-start: 10%; animation-delay: -4.5s; }
+    .hero-icon { position: relative; z-index: 2; width: 240px; max-width: 54vw; height: auto; object-fit: contain; filter: drop-shadow(0 0 28px rgba(34, 211, 238, 0.42)); animation: iconFloat 6s ease-in-out infinite; }
+    .visual-chart { position: absolute; inset-inline: 7%; inset-block-end: 5%; z-index: 2; width: 86%; height: 110px; overflow: visible; }
+    .visual-chart-grid { fill: none; stroke: rgba(148, 163, 184, 0.12); stroke-width: 1; stroke-dasharray: 3 8; }
+    .visual-chart-line { fill: none; stroke: url(#heroChartLine); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: drawHeroChart 8s ease-in-out infinite; }
 
     .trust-strip { padding: 1.15rem 0; border-block: 1px solid var(--line); background: rgba(7, 14, 26, 0.45); }
     .trust-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
@@ -156,23 +137,23 @@
     .trust-badge { padding: 0.46rem 0.7rem; color: #b6c6d9; font-size: 0.76rem; font-weight: 650; background: rgba(20, 35, 59, 0.56); border: 1px solid var(--line); border-radius: 999px; }
 
     section { position: relative; padding: 6.6rem 0; }
-    .section-header { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 2.2rem; }
-    .section-heading { max-width: 650px; }
-    .section-heading h2 { margin: 0.95rem 0 0.75rem; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.04; letter-spacing: -0.065em; }
+    .section-header { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-block-end: 2.2rem; }
+    .section-heading { max-width: 650px; text-align: start; }
+    .section-heading h2 { margin-block: 0.95rem 0.75rem; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.04; letter-spacing: -0.065em; }
     .section-heading p { max-width: 560px; margin: 0; color: var(--muted); font-size: 1rem; }
-    .section-side-copy { max-width: 255px; margin: 0; color: var(--muted); font-size: 0.88rem; text-align: right; }
+    .section-side-copy { max-width: 255px; margin: 0; color: var(--muted); font-size: 0.88rem; text-align: end; }
     .grid { display: grid; gap: 1rem; }
     .services-grid { grid-template-columns: repeat(4, 1fr); }
-    .service-card, .result-card, .step-card, .contact-card, .faq-shell { background: linear-gradient(150deg, rgba(18, 32, 55, 0.82), rgba(11, 22, 39, 0.7)); border: 1px solid var(--line); border-radius: var(--radius-md); }
-    .service-card { position: relative; min-height: 260px; padding: 1.35rem; overflow: hidden; transition: transform 200ms ease, border-color 200ms ease, background 200ms ease; }
-    .service-card::before { position: absolute; top: -3rem; right: 0; width: 9rem; height: 9rem; content: ""; background: radial-gradient(circle, rgba(34, 211, 238, 0.13), transparent 66%); }
+    .service-card, .result-card, .step-card, .contact-card, .faq-shell, .market-map-frame, .market-card { background: linear-gradient(150deg, rgba(18, 32, 55, 0.82), rgba(11, 22, 39, 0.7)); border: 1px solid var(--line); border-radius: var(--radius-md); }
+    .service-card { position: relative; min-height: 260px; padding: 1.35rem; overflow: hidden; text-align: start; transition: transform 200ms ease, border-color 200ms ease, background 200ms ease; }
+    .service-card::before { position: absolute; inset-block-start: -3rem; inset-inline-end: 0; width: 9rem; height: 9rem; content: ""; background: radial-gradient(circle, rgba(34, 211, 238, 0.13), transparent 66%); }
     .service-card:hover { background: linear-gradient(150deg, rgba(24, 45, 79, 0.9), rgba(11, 22, 39, 0.78)); border-color: rgba(96, 165, 250, 0.4); transform: translateY(-5px); }
-    .icon-wrap { display: grid; width: 42px; height: 42px; place-items: center; margin-bottom: 2.15rem; color: #9cefff; background: linear-gradient(140deg, rgba(37, 99, 235, 0.27), rgba(34, 211, 238, 0.1)); border: 1px solid rgba(96, 165, 250, 0.25); border-radius: 12px; }
+    .icon-wrap { display: grid; width: 42px; height: 42px; place-items: center; margin-block-end: 2.15rem; color: #9cefff; background: linear-gradient(140deg, rgba(37, 99, 235, 0.27), rgba(34, 211, 238, 0.1)); border: 1px solid rgba(96, 165, 250, 0.25); border-radius: 12px; }
     .icon-wrap svg { width: 20px; }
-    .service-card h3 { margin-bottom: 0.52rem; font-size: 1.06rem; letter-spacing: -0.03em; }
-    .service-card p { margin-bottom: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.65; }
-    .service-index { position: absolute; right: 1.25rem; bottom: 1.2rem; color: #425470; font-size: 0.7rem; font-weight: 800; }
-    .offer-strip { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1rem; padding: 1rem 1.15rem; background: linear-gradient(110deg, rgba(37, 99, 235, 0.14), rgba(34, 211, 238, 0.06)); border: 1px solid rgba(96, 165, 250, 0.23); border-radius: var(--radius-md); }
+    .service-card h3 { margin-block-end: 0.52rem; font-size: 1.06rem; letter-spacing: -0.03em; }
+    .service-card p { margin-block-end: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.65; }
+    .service-index { position: absolute; inset-inline-end: 1.25rem; inset-block-end: 1.2rem; color: #425470; font-size: 0.7rem; font-weight: 800; }
+    .offer-strip { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-block-start: 1rem; padding: 1rem 1.15rem; background: linear-gradient(110deg, rgba(37, 99, 235, 0.14), rgba(34, 211, 238, 0.06)); border: 1px solid rgba(96, 165, 250, 0.23); border-radius: var(--radius-md); }
     .offer-badge { flex: 0 0 auto; padding: 0.42rem 0.68rem; color: #a9f1ff; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(34, 211, 238, 0.1); border: 1px solid rgba(34, 211, 238, 0.24); border-radius: 999px; }
     .offer-strip p { flex: 1; margin: 0; color: var(--muted-strong); font-size: 0.84rem; }
     .offer-strip p strong { color: #fff; }
@@ -181,43 +162,62 @@
 
     .process-section { background: linear-gradient(180deg, rgba(7, 14, 26, 0), rgba(16, 27, 47, 0.35), rgba(7, 14, 26, 0)); }
     .process-grid { position: relative; grid-template-columns: repeat(3, 1fr); }
-    .process-grid::before { position: absolute; top: 3.15rem; right: 12%; left: 12%; height: 1px; content: ""; background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.42), rgba(34, 211, 238, 0.45), transparent); }
-    .step-card { position: relative; padding: 1.5rem; background: rgba(18, 32, 55, 0.55); }
-    .step-number { display: grid; width: 3.15rem; height: 3.15rem; place-items: center; margin-bottom: 1.5rem; color: #dffaff; font-weight: 850; background: linear-gradient(135deg, var(--blue), #1595d7); border: 5px solid #0e192c; border-radius: 50%; box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.35), 0 9px 28px rgba(37, 99, 235, 0.27); }
-    .step-card h3 { margin-bottom: 0.45rem; font-size: 1.08rem; }
+    .process-grid::before { position: absolute; inset-block-start: 3.15rem; inset-inline: 12%; height: 1px; content: ""; background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.42), rgba(34, 211, 238, 0.45), transparent); }
+    .step-card { position: relative; padding: 1.5rem; background: rgba(18, 32, 55, 0.55); text-align: start; }
+    .step-number { display: grid; width: 3.15rem; height: 3.15rem; place-items: center; margin-block-end: 1.5rem; color: #dffaff; font-weight: 850; background: linear-gradient(135deg, var(--blue), #1595d7); border: 5px solid #0e192c; border-radius: 50%; box-shadow: 0 0 0 1px rgba(96, 165, 250, 0.35), 0 9px 28px rgba(37, 99, 235, 0.27); }
+    .step-card h3 { margin-block-end: 0.45rem; font-size: 1.08rem; }
     .step-card p { margin: 0; color: var(--muted); font-size: 0.9rem; }
 
     .results-grid { grid-template-columns: repeat(3, 1fr); }
-    .result-card { padding: 1.5rem; min-height: 205px; }
+    .result-card { min-height: 205px; padding: 1.5rem; text-align: start; }
     .result-label { display: inline-flex; align-items: center; gap: 0.4rem; color: #96a9c2; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
     .result-label::before { width: 7px; height: 7px; content: ""; background: var(--cyan); border-radius: 50%; }
-    .result-card strong { display: block; margin: 1.5rem 0 0.2rem; font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 0.95; letter-spacing: -0.08em; background: linear-gradient(120deg, #fff, #79e9ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .result-card strong { display: block; margin-block: 1.5rem 0.2rem; font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 0.95; letter-spacing: -0.08em; background: linear-gradient(120deg, #fff, #79e9ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
     .result-card p { margin: 0; color: var(--muted-strong); font-size: 0.92rem; }
-    .result-card small { display: block; margin-top: 1rem; color: #7186a2; font-size: 0.7rem; }
+    .result-card small { display: block; margin-block-start: 1rem; color: #7186a2; font-size: 0.7rem; }
 
     .faq-layout { width: min(800px, 100%); margin-inline: auto; }
     .faq-intro { margin: 0 auto 2rem; text-align: center; }
-    .faq-intro h2 { margin: 0.95rem 0 0.75rem; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.04; letter-spacing: -0.065em; }
+    .faq-intro h2 { margin-block: 0.95rem 0.75rem; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.04; letter-spacing: -0.065em; }
     .faq-intro p { max-width: 560px; margin-inline: auto; color: var(--muted); }
-    .faq-intro .button { margin-top: 0.35rem; }
+    .faq-intro .button { margin-block-start: 0.35rem; }
     .faq-shell { overflow: hidden; }
-    .faq-item { border-bottom: 1px solid rgba(148, 163, 184, 0.16); }
-    .faq-item:last-child { border-bottom: 0; }
-    .faq-question { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 1rem; padding: 20px; color: #e5eaf3; font-size: 1rem; font-weight: 750; text-align: left; background: transparent; border: 0; cursor: pointer; }
+    .faq-item { border-block-end: 1px solid rgba(148, 163, 184, 0.16); }
+    .faq-item:last-child { border-block-end: 0; }
+    .faq-question { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 1rem; padding: 20px; color: #e5eaf3; font-size: 1rem; font-weight: 750; text-align: start; background: transparent; border: 0; cursor: pointer; }
     .faq-question:hover { background: rgba(37, 99, 235, 0.08); }
     .faq-icon { display: grid; width: 30px; height: 30px; flex: 0 0 auto; place-items: center; color: #9edfff; font-size: 1.35rem; font-weight: 400; line-height: 1; border: 1px solid rgba(96, 165, 250, 0.28); border-radius: 50%; }
     .faq-answer { display: grid; grid-template-rows: 0fr; padding: 0 20px; color: #94a3b8; font-size: 0.92rem; opacity: 0; transition: grid-template-rows 300ms ease, opacity 220ms ease, padding 300ms ease; }
     .faq-answer-inner { min-height: 0; overflow: hidden; }
     .faq-answer p { margin: 0; }
-    .faq-item.is-open .faq-answer { grid-template-rows: 1fr; padding-bottom: 20px; opacity: 1; }
+    .faq-item.is-open .faq-answer { grid-template-rows: 1fr; padding-block-end: 20px; opacity: 1; }
     .faq-item.is-open .faq-question { color: #fff; }
 
-    .contact-section { padding-top: 5rem; }
+    .markets-section { background: linear-gradient(180deg, rgba(7, 14, 26, 0), rgba(16, 27, 47, 0.3), rgba(7, 14, 26, 0)); }
+    .markets-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr); gap: 1rem; align-items: stretch; }
+    .market-map-frame { min-width: 0; padding: 1rem; overflow: hidden; background: #0b1220; }
+    .map-canvas { position: relative; width: 100%; aspect-ratio: 2 / 1; overflow: hidden; direction: ltr; background: #0b1220; border: 1px solid rgba(96, 165, 250, 0.14); border-radius: 18px; }
+    .world-map-base, .world-map-overlay { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+    .world-map-base { opacity: 0.96; }
+    .world-map-overlay { overflow: visible; pointer-events: none; }
+    .market-country { fill: url(#marketGradient); stroke: rgba(125, 243, 255, 0.9); stroke-width: 2.5; filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.52)); }
+    .connection-lines path { fill: none; stroke: rgba(94, 218, 255, 0.78); stroke-width: 3; stroke-dasharray: 12 14; stroke-linecap: round; animation: marketDash 14s linear infinite; }
+    .market-dot { fill: #22d3ee; stroke: #0b1220; stroke-width: 7; transform-box: fill-box; transform-origin: center; animation: marketPulse 3s ease-in-out infinite; }
+    .hq-dot { fill: #fff; }
+    .map-label { fill: #e5eaf3; font-family: Inter, sans-serif; font-size: 24px; font-weight: 700; letter-spacing: 0.02em; paint-order: stroke; stroke: #0b1220; stroke-width: 8px; stroke-linejoin: round; }
+    .map-source { margin: 0.7rem 0 0; color: #607490; font-size: 0.68rem; text-align: end; }
+    .market-cards { display: grid; grid-template-rows: repeat(3, 1fr); gap: 1rem; }
+    .market-card { display: grid; align-content: center; min-height: 120px; padding: 1.2rem 1.35rem; text-align: start; transition: transform 200ms ease, border-color 200ms ease; }
+    .market-card:hover { border-color: rgba(34, 211, 238, 0.42); transform: translateY(-4px); }
+    .market-card h3 { margin-block-end: 0.35rem; font-size: 18px; }
+    .market-card p { margin: 0; color: #94a3b8; font-size: 14px; line-height: 1.55; }
+
+    .contact-section { padding-block-start: 5rem; }
     .contact-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 1rem; }
-    .contact-card { padding: clamp(1.35rem, 3vw, 2rem); }
-    .contact-card h2 { max-width: 480px; margin: 0.95rem 0 0.8rem; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.04; letter-spacing: -0.065em; }
+    .contact-card { padding: clamp(1.35rem, 3vw, 2rem); text-align: start; }
+    .contact-card h2 { max-width: 480px; margin-block: 0.95rem 0.8rem; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.04; letter-spacing: -0.065em; }
     .contact-card > p { max-width: 450px; color: var(--muted); }
-    .contact-links { display: grid; gap: 0.68rem; margin-top: 1.8rem; }
+    .contact-links { display: grid; gap: 0.68rem; margin-block-start: 1.8rem; }
     .contact-link { display: flex; align-items: center; gap: 0.8rem; padding: 0.76rem 0.85rem; color: #dceafa; background: rgba(10, 20, 36, 0.48); border: 1px solid var(--line); border-radius: 12px; transition: background 180ms ease, border-color 180ms ease, transform 180ms ease; }
     .contact-link:hover { background: rgba(24, 45, 79, 0.62); border-color: rgba(96, 165, 250, 0.4); transform: translateX(3px); }
     .contact-link svg { width: 18px; flex: 0 0 auto; color: #90eaff; }
@@ -225,8 +225,8 @@
     .contact-link small { color: #7890ad; font-size: 0.67rem; }
     .contact-link strong { font-size: 0.84rem; }
     .form-card { background: linear-gradient(150deg, rgba(18, 32, 55, 0.92), rgba(10, 20, 36, 0.86)); }
-    .form-card h3 { margin: 0 0 0.35rem; font-size: 1.4rem; letter-spacing: -0.04em; }
-    .form-intro { margin: 0 0 1.25rem; color: var(--muted); font-size: 0.87rem; }
+    .form-card h3 { margin-block: 0 0.35rem; font-size: 1.4rem; letter-spacing: -0.04em; }
+    .form-intro { margin-block: 0 1.25rem; color: var(--muted); font-size: 0.87rem; }
     .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
     .field { display: grid; gap: 0.42rem; }
     .field-full { grid-column: 1 / -1; }
@@ -236,94 +236,138 @@
     textarea { min-height: 126px; padding: 0.78rem 0.8rem; resize: vertical; }
     input::placeholder, textarea::placeholder { color: #607490; }
     input:focus, textarea:focus { background: rgba(9, 20, 36, 0.9); border-color: rgba(34, 211, 238, 0.62); box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.08); outline: 0; }
-    .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem; margin-top: 1rem; }
+    .form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.8rem; margin-block-start: 1rem; }
     .form-note { display: flex; align-items: center; gap: 0.42rem; margin: 0; color: #8fdcbd; font-size: 0.75rem; }
     .form-note span { font-size: 0.95rem; }
 
     .site-footer { padding: 1.6rem 0 2.1rem; border-top: 1px solid var(--line); background: rgba(6, 12, 22, 0.5); }
     .footer-main { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
-    .footer-brand { display: inline-flex; align-items: center; gap: 0.7rem; }
-    .footer-brand img { display: block; width: auto; height: auto; max-height: 64px; max-width: 220px; object-fit: contain; object-position: center; border-radius: 14px; background: #0b1220; border: 1px solid #1e2a44; box-shadow: 0 0 26px rgba(34, 211, 238, 0.2); }
-    .footer-brand strong { color: #fff; font-size: 26px; letter-spacing: -0.05em; }
-    .footer-brand p { margin: 0.2rem 0 0; color: #70849f; font-size: 0.73rem; }
+    .footer-brand { display: inline-flex; align-items: center; gap: 12px; direction: ltr; }
+    .footer-brand img { display: block; width: auto; height: 64px; object-fit: contain; object-position: center; }
+    .footer-brand-name { color: #fff; font-size: 26px; font-weight: 700; line-height: 1; letter-spacing: -0.03em; }
     .footer-meta { display: flex; align-items: center; gap: 1.1rem; color: #7588a2; font-size: 0.76rem; }
     .footer-meta a:hover { color: #fff; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1.45rem; padding-top: 1rem; border-top: 1px solid rgba(148, 163, 184, 0.1); color: #556981; font-size: 0.71rem; }
-    .floating-whatsapp { position: fixed; right: 1.2rem; bottom: 1.2rem; z-index: 40; display: grid; width: 52px; height: 52px; place-items: center; color: #06120d; background: #25d366; border: 4px solid rgba(11, 18, 32, 0.78); border-radius: 50%; box-shadow: 0 10px 28px rgba(37, 211, 102, 0.28); transition: transform 180ms ease, box-shadow 180ms ease; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 1rem; margin-block-start: 1.45rem; padding-block-start: 1rem; border-block-start: 1px solid rgba(148, 163, 184, 0.1); color: #556981; font-size: 0.71rem; }
+    .floating-whatsapp { position: fixed; inset-inline-end: 1.2rem; inset-block-end: 1.2rem; z-index: 40; display: grid; width: 52px; height: 52px; place-items: center; color: #06120d; background: #25d366; border: 4px solid rgba(11, 18, 32, 0.78); border-radius: 50%; box-shadow: 0 10px 28px rgba(37, 211, 102, 0.28); transition: transform 180ms ease, box-shadow 180ms ease; }
     .floating-whatsapp:hover { box-shadow: 0 14px 35px rgba(37, 211, 102, 0.4); transform: translateY(-3px) scale(1.04); }
     .floating-whatsapp svg { width: 23px; }
 
     .reveal { opacity: 1; transform: none; }
     .js-ready .reveal { opacity: 0; transform: translateY(20px); transition: opacity 650ms ease, transform 650ms ease; }
     .js-ready .reveal.is-visible { opacity: 1; transform: none; }
-    @keyframes drawLine { to { stroke-dashoffset: 0; } }
-    @keyframes growBar { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @keyframes iconFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes cardFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes drawHeroChart { 0% { stroke-dashoffset: 1; } 45%, 70% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 1; } }
+    @keyframes networkDrift { 0%, 100% { transform: translate3d(0, 0, 0); } 50% { transform: translate3d(8px, -6px, 0); } }
+    @keyframes networkDash { to { stroke-dashoffset: -100; } }
+    @keyframes nodePulse { 0%, 100% { opacity: 0.35; transform: scale(1); } 50% { opacity: 0.85; transform: scale(1.25); } }
+    @keyframes marketDash { to { stroke-dashoffset: -120; } }
+    @keyframes marketPulse { 0%, 100% { transform: scale(0.9); opacity: 0.75; } 50% { transform: scale(1.25); opacity: 1; } }
 
-    @media (min-width: 880px) { .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(440px, 0.92fr); } }
-    @media (max-width: 980px) { .nav-links { gap: 1rem; } .services-grid { grid-template-columns: repeat(2, 1fr); } .hero-grid { gap: 2.5rem; } .section-side-copy { display: none; } }
-    @media (max-width: 760px) {
-      .container { width: min(var(--container), calc(100% - 1.5rem)); }
-      .navbar { min-height: 68px; }
-      .brand-mark { height: 44px; }
-      .brand-name { font-size: 22px; }
+    @media (min-width: 1024px) { .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(440px, 0.92fr); } }
+    @media (max-width: 1023px) {
+      .navbar { min-height: 80px; }
+      .brand-mark { height: 70px; }
+      .brand-name { font-size: 28px; }
       .mobile-toggle { display: grid; }
-      .nav-links { position: absolute; top: calc(100% + 0.5rem); right: 0.75rem; left: 0.75rem; display: grid; gap: 0; padding: 0.5rem; background: rgba(14, 25, 44, 0.98); border: 1px solid var(--line-bright); border-radius: 16px; box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(-8px); transition: opacity 180ms ease, transform 180ms ease; }
+      .nav-links { position: absolute; inset-block-start: calc(100% + 0.5rem); inset-inline: 0.75rem; display: grid; gap: 0; padding: 0.5rem; background: rgba(14, 25, 44, 0.98); border: 1px solid var(--line-bright); border-radius: 16px; box-shadow: var(--shadow); opacity: 0; pointer-events: none; transform: translateY(-8px); transition: opacity 180ms ease, transform 180ms ease; }
       .nav-links a { padding: 0.75rem 0.8rem; }
       .nav-links > a:not(.button)::after { display: none; }
-      .nav-links .button { width: 100%; margin-top: 0.35rem; }
+      .nav-links .button { width: 100%; margin-block-start: 0.35rem; }
       .nav-links.open { opacity: 1; pointer-events: auto; transform: none; }
-      .hero { padding: 3.7rem 0 3.4rem; }
-      h1 { font-size: clamp(2.7rem, 13vw, 4.2rem); }
-      .dashboard-shell { margin-top: 0.9rem; }
+      .language-switcher { width: 100%; justify-content: flex-start; margin-block-start: 0.35rem; padding: 0.65rem 0.8rem; border-radius: 12px; }
+      .language-switcher select { width: 100%; max-width: none; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-side-copy { display: none; }
+      .markets-layout { grid-template-columns: 1fr; }
+      .market-cards { grid-template-columns: repeat(3, 1fr); grid-template-rows: none; }
+    }
+    @media (max-width: 900px) {
+      .container { width: min(var(--container), calc(100% - 1.5rem)); }
+      .hero { padding-block: 3.7rem 3.4rem; }
+      .hero-grid { gap: 2.5rem; }
+      .hero-visual { min-height: 430px; margin-block-start: 1rem; }
+      .hero-icon { width: 210px; max-width: 54vw; }
+      .data-card { padding: 12px 14px; }
+      .data-card.revenue { inset-block-start: 12%; inset-inline-start: 2%; }
+      .data-card.roas { inset-block-start: 32%; inset-inline-end: 0; }
+      .data-card.churn { inset-block-end: 18%; inset-inline-start: 5%; }
+      .visual-chart { inset-inline: 3%; inset-block-end: 4%; width: 94%; height: 90px; }
       .trust-inner { display: grid; justify-content: stretch; gap: 0.8rem; }
       .trust-inner > span { white-space: normal; }
       .trust-badges { justify-content: flex-start; }
-      section { padding: 4.8rem 0; }
-      .section-header { display: block; margin-bottom: 1.65rem; }
-      .services-grid, .results-grid, .process-grid, .contact-layout, .faq-layout { grid-template-columns: 1fr; }
+      section { padding-block: 4.8rem; }
+      .section-header { display: block; margin-block-end: 1.65rem; }
       .process-grid { gap: 0.8rem; }
-      .process-grid::before { top: 0; bottom: 0; left: 1.5rem; width: 1px; height: auto; background: linear-gradient(180deg, transparent, rgba(96, 165, 250, 0.42), transparent); }
+      .process-grid::before { inset-block-start: 0; inset-block-end: 0; inset-inline-start: 1.5rem; width: 1px; height: auto; background: linear-gradient(180deg, transparent, rgba(96, 165, 250, 0.42), transparent); }
       .step-card { padding: 1.15rem 1.15rem 1.15rem 4.5rem; }
-      .step-number { position: absolute; top: 1.1rem; left: 1rem; width: 2.6rem; height: 2.6rem; margin: 0; border-width: 4px; }
-      .faq-intro { position: static; }
-      .faq-answer { padding-right: 20px; padding-left: 20px; }
-      .form-grid { grid-template-columns: 1fr; }
-      .field-full { grid-column: auto; }
+      .step-number { position: absolute; inset-block-start: 1.1rem; inset-inline-start: 1rem; width: 2.6rem; height: 2.6rem; margin: 0; border-width: 4px; }
       .footer-main, .footer-bottom { align-items: flex-start; flex-direction: column; }
       .footer-meta { flex-wrap: wrap; }
       .offer-strip { align-items: flex-start; flex-direction: column; }
+      .market-cards { grid-template-columns: 1fr; }
+      .market-card { min-height: 0; }
     }
-    @media (max-width: 430px) {
-      .brand-tag { display: none; }
+    @media (max-width: 767px) {
+      .navbar { min-height: 68px; }
+      .brand-mark { height: 56px; }
+      .brand-name { font-size: 24px; }
       .hero-actions, .form-actions { align-items: stretch; flex-direction: column; }
       .hero-actions .button, .form-actions .button { width: 100%; }
-      .dashboard-body { grid-template-columns: 42px 1fr; }
-      .dashboard-main { padding: 0.7rem; }
-      .metric-grid { gap: 0.35rem; }
-      .metric-card { padding: 0.55rem; }
-      .metric-card strong { font-size: 0.85rem; }
-      .dashboard-bottom { grid-template-columns: 1fr; }
-      .insight-panel { min-height: 105px; }
+      .hero-visual { min-height: 370px; }
+      .hero-icon { width: 180px; max-width: 54vw; }
+      .data-card strong { font-size: 18px; }
+      .data-card span { font-size: 11px; }
+      .data-card.revenue { inset-block-start: 12%; inset-inline-start: 0; }
+      .data-card.roas { inset-block-start: 35%; inset-inline-end: 0; }
+      .data-card.churn { inset-block-end: 17%; inset-inline-start: 0; }
+      .visual-chart { height: 75px; }
+      .services-grid, .results-grid, .process-grid, .contact-layout { grid-template-columns: 1fr; }
+      .faq-answer { padding-inline: 20px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field-full { grid-column: auto; }
+      .map-canvas { min-height: 250px; }
     }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } .js-ready .reveal { opacity: 1; transform: none; } }
+    @media (max-width: 359px) {
+      .container { width: min(var(--container), calc(100% - 1.25rem)); }
+      .brand { gap: 10px; }
+      .brand-name { font-size: 22px; }
+      .mobile-toggle { width: 40px; height: 40px; }
+    }
+    html[dir="rtl"] .hero-grid { direction: rtl; }
+    html[dir="rtl"] .hero-visual, html[dir="rtl"] .map-canvas { direction: ltr; }
+    html[dir="rtl"] .hero-actions { flex-direction: row-reverse; }
+    html[dir="rtl"] .contact-link:hover { transform: translateX(-3px); }
+    html[dir="rtl"] .arrow-icon { transform: scaleX(-1); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+      .js-ready .reveal { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <a class="skip-link" href="#main-content" data-i18n="common.skip">Skip to content</a>
 
   <header class="site-header" id="site-header">
     <div class="container navbar">
       <a class="brand" href="#top" aria-label="Metrio home">
         <img class="brand-mark" src="./logo.png" alt="Metrio logo">
-        <span class="brand-copy"><span class="brand-name">Metrio</span><span class="brand-tag">Data &amp; AI</span></span>
       </a>
-      <button class="mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation">
+      <button class="mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="primary-navigation" data-i18n-aria-label="nav.open">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
       </button>
       <nav class="nav-links" id="primary-navigation" aria-label="Primary navigation">
-        <a href="#services">Services</a><a href="#process">Process</a><a href="#results">Results</a><a href="#contact">Contact</a>
-        <a class="button button-primary nav-audit-button" href="#contact">Free audit <span aria-hidden="true">↗</span></a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#process" data-i18n="nav.process">Process</a>
+        <a href="#results" data-i18n="nav.results">Results</a>
+        <a href="#markets" data-i18n="nav.markets">Markets</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a class="button button-primary nav-audit-button" href="#contact" data-i18n="nav.audit">Free audit</a>
+        <div class="language-switcher">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg>
+          <select id="language-select" aria-label="Language"><option value="en">EN</option><option value="ar">العربية</option><option value="de">DE</option></select>
+        </div>
       </nav>
     </div>
   </header>
@@ -332,84 +376,93 @@
     <section class="hero" id="top">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <span class="eyebrow">Data &amp; AI systems for modern companies</span>
-          <h1>We turn complex data into <span class="gradient-text">clearer decisions.</span></h1>
-          <p>Metrio helps companies analyze performance, predict what is next, and turn scattered data into practical growth actions. For e-commerce teams, Shopify growth analytics is one of our specialist offers.</p>
-          <div class="hero-actions"><a class="button button-primary" href="#contact">Book a free audit <span aria-hidden="true">↗</span></a><a class="button button-secondary" href="https://wa.me/38348240869" target="_blank" rel="noopener">WhatsApp us <span aria-hidden="true">↗</span></a></div>
-          <p class="hero-note"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg>Clear recommendations, practical implementation, no long-term lock-in.</p>
+          <span class="eyebrow" data-i18n="hero.eyebrow">Data &amp; AI systems for modern companies</span>
+          <h1><span data-i18n="hero.titleStart">We turn complex data into</span> <span class="gradient-text" data-i18n="hero.titleHighlight">clearer decisions.</span></h1>
+          <p data-i18n="hero.description">Metrio helps e-commerce brands analyze performance, predict what is next and turn scattered data into practical growth actions.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#contact" data-i18n="hero.audit">Book a free audit</a><a class="button button-secondary" href="https://wa.me/38348240869" target="_blank" rel="noopener" data-i18n="hero.whatsapp">WhatsApp us</a></div>
+          <p class="hero-note"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg><span data-i18n="hero.note">Clear recommendations, practical implementation, no long-term lock-in.</span></p>
         </div>
 
-        <div class="dashboard-shell reveal" aria-label="Illustrative Metrio analytics dashboard">
-          <div class="dashboard-window">
-            <div class="window-bar"><div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div><span class="window-label">Metrio / analytics overview</span></div>
-            <div class="dashboard-body">
-              <aside class="dashboard-sidebar" aria-hidden="true">
-                <span class="side-icon active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z"></path></svg></span>
-                <span class="side-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5m0 14h16M8 16v-3m4 3V8m4 8v-6m4 6V4"></path></svg></span>
-                <span class="side-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3"></circle><path d="M5 20a7 7 0 0 1 14 0"></path></svg></span>
-                <span class="side-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"></path></svg></span>
-              </aside>
-              <div class="dashboard-main">
-                <div class="dashboard-heading"><div><h3>Business performance</h3><p>Last 30 days · connected sources</p></div><span class="live-pill">Live data</span></div>
-                <div class="metric-grid"><div class="metric-card"><p>Revenue</p><strong>$184.2k</strong><small>↗ 18.4%</small></div><div class="metric-card"><p>Forecast</p><strong>86.2%</strong><small>↗ 6.2%</small></div><div class="metric-card"><p>Efficiency</p><strong>4.8x</strong><small>↗ 0.7x</small></div></div>
-                <div class="chart-panel">
-                  <div class="chart-heading"><span>Performance trend</span><strong>+18.4%</strong></div>
-                  <svg class="chart" viewBox="0 0 420 140" role="img" aria-label="Illustrative performance trend rising over 30 days" preserveAspectRatio="none"><defs><linearGradient id="chartLine" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#2563eb"></stop><stop offset="1" stop-color="#22d3ee"></stop></linearGradient><linearGradient id="chartArea" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#22d3ee"></stop><stop offset="1" stop-color="#22d3ee" stop-opacity="0"></stop></linearGradient></defs><path class="chart-grid" d="M0 15H420M0 50H420M0 85H420M0 120H420"></path><path class="chart-area" d="M0 111 C35 106, 48 102, 74 105 S108 79, 135 91 S174 60, 202 74 S245 54, 269 59 S304 41, 329 49 S371 26, 420 12 L420 140 L0 140Z"></path><path class="chart-line" pathLength="1" d="M0 111 C35 106, 48 102, 74 105 S108 79, 135 91 S174 60, 202 74 S245 54, 269 59 S304 41, 329 49 S371 26, 420 12"></path><circle class="chart-dot" cx="420" cy="12" r="5"></circle></svg>
-                  <div class="chart-labels"><span>Week 1</span><span>Week 2</span><span>Week 3</span><span>Week 4</span><span>Now</span></div>
-                </div>
-                <div class="dashboard-bottom">
-                  <div class="bar-panel"><div class="mini-heading"><span>Business drivers</span><b>Impact</b></div><div class="bar-row"><span>Sales</span><div class="bar-track"><span class="bar-fill" style="--bar-width: 82%"></span></div><b>42%</b></div><div class="bar-row"><span>Retention</span><div class="bar-track"><span class="bar-fill" style="--bar-width: 64%"></span></div><b>31%</b></div><div class="bar-row"><span>Ops</span><div class="bar-track"><span class="bar-fill" style="--bar-width: 38%"></span></div><b>18%</b></div></div>
-                  <div class="insight-panel"><div class="mini-heading"><span>AI insight</span><strong>●</strong></div><p>Your highest-value segment shows the strongest expansion potential.</p></div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="hero-visual reveal" aria-label="Illustrative Metrio data and AI visual" data-i18n-aria-label="hero.visualAria">
+          <div class="visual-network" aria-hidden="true"><svg viewBox="0 0 520 360" role="presentation"><g class="network-lines"><path d="M42 72 146 42l92 64 102-32 132 72M52 258l104-74 102 42 102-82 108 68M146 42l10 142m82-78 20 178m102-210-22 128m132-56-104 18m-54 42-84 38"></path></g><g class="network-nodes"><circle cx="42" cy="72" r="3"></circle><circle cx="146" cy="42" r="3"></circle><circle cx="238" cy="106" r="3"></circle><circle cx="340" cy="74" r="3"></circle><circle cx="472" cy="146" r="3"></circle><circle cx="52" cy="258" r="3"></circle><circle cx="156" cy="184" r="3"></circle><circle cx="258" cy="226" r="3"></circle><circle cx="360" cy="144" r="3"></circle><circle cx="468" cy="212" r="3"></circle></g></svg></div>
+          <div class="data-card revenue"><strong>+18%</strong><span data-i18n="hero.cardRevenue">Revenue</span></div>
+          <div class="data-card roas"><strong>4.8x</strong><span data-i18n="hero.cardRoas">Return on ad spend</span></div>
+          <div class="data-card churn"><strong>-12%</strong><span data-i18n="hero.cardChurn">Churn</span></div>
+          <img class="hero-icon" src="./metrio-icon.svg" alt="Metrio data and AI symbol">
+          <svg class="visual-chart" viewBox="0 0 440 110" role="img" aria-label="Illustrative rising data trend" data-i18n-aria-label="hero.chartAria" preserveAspectRatio="none"><defs><linearGradient id="heroChartLine" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#2563eb"></stop><stop offset="1" stop-color="#22d3ee"></stop></linearGradient></defs><path class="visual-chart-grid" d="M0 20H440M0 56H440M0 92H440"></path><path class="visual-chart-line" pathLength="1" d="M4 90 C50 84, 74 70, 112 78 S176 34, 218 58 S290 50, 328 39 S390 22, 436 12"></path></svg>
         </div>
       </div>
     </section>
 
-    <div class="trust-strip" aria-label="Tools Metrio works with"><div class="container trust-inner"><span>Built around your stack</span><div class="trust-badges"><span class="trust-badge">Shopify</span><span class="trust-badge">Klaviyo</span><span class="trust-badge">Google Analytics</span><span class="trust-badge">Meta Ads</span><span class="trust-badge">Looker Studio</span></div></div></div>
+    <div class="trust-strip" aria-label="Tools Metrio works with" data-i18n-aria-label="trust.aria"><div class="container trust-inner"><span data-i18n="trust.label">Built around your stack</span><div class="trust-badges"><span class="trust-badge" data-i18n="trust.ecommerce">E-commerce data</span><span class="trust-badge">Klaviyo</span><span class="trust-badge">Google Analytics</span><span class="trust-badge">Meta Ads</span><span class="trust-badge">Looker Studio</span></div></div></div>
 
     <section id="services">
       <div class="container">
-        <div class="section-header reveal"><div class="section-heading"><span class="section-kicker">What we solve</span><h2>Less guesswork. More confident decisions.</h2><p>Your business already creates the signals. We connect them, make them useful, and turn them into your next best actions.</p></div><p class="section-side-copy">Designed for teams that want senior data thinking without adding another full-time hire.</p></div>
+        <div class="section-header reveal"><div class="section-heading"><span class="section-kicker" data-i18n="services.kicker">What we solve</span><h2 data-i18n="services.title">Less guesswork. More confident decisions.</h2><p data-i18n="services.intro">Your business already creates the signals. We connect them, make them useful, and turn them into your next best actions.</p></div><p class="section-side-copy" data-i18n="services.side">Designed for teams that want senior data thinking without adding another full-time hire.</p></div>
         <div class="grid services-grid">
-          <article class="service-card reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 19V5m0 14h16M8 16v-3m4 3V8m4 8v-6m4 6V4"></path></svg></div><h3>Analytics &amp; BI Dashboards</h3><p>One clear view of performance, trends, and the signals your team needs to act on next.</p><span class="service-index">01</span></article>
-          <article class="service-card reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.3"></circle><path d="M3.5 20a5.5 5.5 0 0 1 11 0M14 19a4 4 0 0 1 7 0"></path></svg></div><h3>Customer &amp; Cohort Intelligence</h3><p>Understand segments, lifetime value, retention, and the audiences with the most room to grow.</p><span class="service-index">02</span></article>
-          <article class="service-card reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v14H4z"></path><path d="m7 15 3-3 2 2 4-5 2 2"></path></svg></div><h3>Data Quality &amp; Attribution</h3><p>Repair the gaps between your systems so reporting is consistent, trusted, and ready for better decisions.</p><span class="service-index">03</span></article>
-          <article class="service-card reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v4m0 10v4M4.9 4.9l2.8 2.8m8.6 8.6 2.8 2.8M3 12h4m10 0h4M4.9 19.1l2.8-2.8m8.6-8.6 2.8-2.8"></path><circle cx="12" cy="12" r="3.5"></circle></svg></div><h3>Forecasting &amp; Predictive Models</h3><p>Use practical models to anticipate demand, churn, repeat purchase, and the next growth opportunity.</p><span class="service-index">04</span></article>
+          <article class="service-card reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 19V5m0 14h16M8 16v-3m4 3V8m4 8v-6m4 6V4"></path></svg></div><h3 data-i18n="services.card1Title">Analytics &amp; BI Dashboards</h3><p data-i18n="services.card1Text">One clear view of performance, trends, and the signals your team needs to act on next.</p><span class="service-index">01</span></article>
+          <article class="service-card reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="8" r="3"></circle><circle cx="17" cy="9" r="2.3"></circle><path d="M3.5 20a5.5 5.5 0 0 1 11 0M14 19a4 4 0 0 1 7 0"></path></svg></div><h3 data-i18n="services.card2Title">Customer &amp; Cohort Intelligence</h3><p data-i18n="services.card2Text">Understand segments, lifetime value, retention, and the audiences with the most room to grow.</p><span class="service-index">02</span></article>
+          <article class="service-card reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 5h16v14H4z"></path><path d="m7 15 3-3 2 2 4-5 2 2"></path></svg></div><h3 data-i18n="services.card3Title">Data Quality &amp; Attribution</h3><p data-i18n="services.card3Text">Repair the gaps between your systems so reporting is consistent, trusted, and ready for better decisions.</p><span class="service-index">03</span></article>
+          <article class="service-card reveal"><div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v4m0 10v4M4.9 4.9l2.8 2.8m8.6 8.6 2.8 2.8M3 12h4m10 0h4M4.9 19.1l2.8-2.8m8.6-8.6 2.8-2.8"></path><circle cx="12" cy="12" r="3.5"></circle></svg></div><h3 data-i18n="services.card4Title">Forecasting &amp; Predictive Models</h3><p data-i18n="services.card4Text">Use practical models to anticipate demand, churn, repeat purchase, and the next growth opportunity.</p><span class="service-index">04</span></article>
         </div>
-        <div class="offer-strip reveal"><span class="offer-badge">Shopify offer</span><p><strong>For Shopify brands:</strong> connect store analytics, LTV, attribution, and repeat-purchase insights to the wider business picture.</p><a href="#contact">Explore the offer <span aria-hidden="true">↗</span></a></div>
+        <div class="offer-strip reveal"><span class="offer-badge" data-i18n="services.offerBadge">E-commerce offer</span><p><strong data-i18n="services.offerStrong">For e-commerce brands:</strong> <span data-i18n="services.offerText">connect store analytics, LTV, attribution, and repeat-purchase insights to the wider business picture.</span></p><a href="#contact"><span data-i18n="services.offerLink">Explore the offer</span> <span class="arrow-icon" aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 
     <section class="process-section" id="process">
       <div class="container">
-        <div class="section-header reveal"><div class="section-heading"><span class="section-kicker">How it works</span><h2>A sharper growth loop in three steps.</h2><p>Start with what is already in your store. We make the next decision easier, then help your team build on it.</p></div></div>
-        <div class="grid process-grid"><article class="step-card reveal"><span class="step-number">01</span><h3>Free audit</h3><p>We review your store, tracking, reporting, and growth bottlenecks in a focused call.</p></article><article class="step-card reveal"><span class="step-number">02</span><h3>We build</h3><p>We prioritize the highest-leverage fixes and build the dashboards, segments, or models you need.</p></article><article class="step-card reveal"><span class="step-number">03</span><h3>You grow</h3><p>Your team gets clear reporting, practical recommendations, and a system that gets smarter over time.</p></article></div>
+        <div class="section-header reveal"><div class="section-heading"><span class="section-kicker" data-i18n="process.kicker">How it works</span><h2 data-i18n="process.title">A sharper growth loop in three steps.</h2><p data-i18n="process.intro">Start with what is already in your business. We make the next decision easier, then help your team build on it.</p></div></div>
+        <div class="grid process-grid"><article class="step-card reveal"><span class="step-number">01</span><h3 data-i18n="process.step1Title">Free audit</h3><p data-i18n="process.step1Text">We review your data, tracking, reporting, and growth bottlenecks in a focused call.</p></article><article class="step-card reveal"><span class="step-number">02</span><h3 data-i18n="process.step2Title">We build</h3><p data-i18n="process.step2Text">We prioritize the highest-leverage fixes and build the dashboards, segments, or models you need.</p></article><article class="step-card reveal"><span class="step-number">03</span><h3 data-i18n="process.step3Title">You grow</h3><p data-i18n="process.step3Text">Your team gets clear reporting, practical recommendations, and a system that gets smarter over time.</p></article></div>
       </div>
     </section>
 
     <section id="results">
       <div class="container">
-        <div class="section-header reveal"><div class="section-heading"><span class="section-kicker">What to measure</span><h2>Make progress visible.</h2><p>Use the right numbers to connect your work to growth. Replace the placeholders below with verified results as your case studies develop.</p></div></div>
+        <div class="section-header reveal"><div class="section-heading"><span class="section-kicker" data-i18n="results.kicker">What to measure</span><h2 data-i18n="results.title">Make progress visible.</h2><p data-i18n="results.intro">Use the right numbers to connect your work to growth. Replace the placeholders below with verified results as your case studies develop.</p></div></div>
         <!-- Replace the placeholder result numbers below with verified, real client results before launch. -->
-        <div class="grid results-grid"><article class="result-card reveal"><span class="result-label">Placeholder outcome</span><strong>+25%</strong><p>repeat purchases</p><small>Illustrative result — replace with a verified case study.</small></article><article class="result-card reveal"><span class="result-label">Placeholder outcome</span><strong>4.8x</strong><p>blended ROAS clarity</p><small>Illustrative result — replace with a verified case study.</small></article><article class="result-card reveal"><span class="result-label">Placeholder outcome</span><strong>−18%</strong><p>avoidable churn</p><small>Illustrative result — replace with a verified case study.</small></article></div>
+        <div class="grid results-grid"><article class="result-card reveal"><span class="result-label" data-i18n="results.label">Placeholder outcome</span><strong>+25%</strong><p data-i18n="results.card1Text">repeat purchases</p><small data-i18n="results.note">Illustrative result — replace with a verified case study.</small></article><article class="result-card reveal"><span class="result-label" data-i18n="results.label">Placeholder outcome</span><strong>4.8x</strong><p data-i18n="results.card2Text">blended ROAS clarity</p><small data-i18n="results.note">Illustrative result — replace with a verified case study.</small></article><article class="result-card reveal"><span class="result-label" data-i18n="results.label">Placeholder outcome</span><strong>−18%</strong><p data-i18n="results.card3Text">avoidable churn</p><small data-i18n="results.note">Illustrative result — replace with a verified case study.</small></article></div>
       </div>
     </section>
 
-    <section id="faq"><div class="container faq-layout"><div class="faq-intro reveal"><span class="section-kicker">Good to know</span><h2>Questions, answered.</h2><p>Not sure where to start? A free audit is the easiest way to understand what will create the most value for your company.</p><a class="button button-secondary button-small" href="#contact">Ask us directly <span aria-hidden="true">↗</span></a></div><div class="faq-shell reveal" aria-label="Frequently asked questions"><div class="faq-item is-open"><button class="faq-question" type="button" aria-expanded="true" aria-controls="faq-answer-1"><span>How much does it cost?</span><span class="faq-icon" aria-hidden="true">−</span></button><div class="faq-answer" id="faq-answer-1" role="region"><div class="faq-answer-inner"><p>Projects start from $300, monthly plans from $500. The free audit is always free.</p></div></div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span>How long does it take?</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer" id="faq-answer-2" role="region"><div class="faq-answer-inner"><p>A dashboard is ready in 3 to 7 days.</p></div></div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span>Which tools do you use?</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer" id="faq-answer-3" role="region"><div class="faq-answer-inner"><p>Shopify, Klaviyo, Google Analytics, Meta Ads, Looker Studio, Power BI, Python.</p></div></div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4"><span>Can you work with clients in the USA and Dubai?</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer" id="faq-answer-4" role="region"><div class="faq-answer-inner"><p>Yes, fully remote, with flexible hours that overlap with US and Gulf time zones.</p></div></div></div></div></div></section>
+    <section id="faq"><div class="container faq-layout"><div class="faq-intro reveal"><span class="section-kicker" data-i18n="faq.kicker">Good to know</span><h2 data-i18n="faq.title">Questions, answered.</h2><p data-i18n="faq.intro">Not sure where to start? A free audit is the easiest way to understand what will create the most value for your company.</p><a class="button button-secondary button-small" href="#contact"><span data-i18n="faq.ask">Ask us directly</span> <span class="arrow-icon" aria-hidden="true">↗</span></a></div><div class="faq-shell reveal" aria-label="Frequently asked questions" data-i18n-aria-label="faq.aria"><div class="faq-item is-open"><button class="faq-question" type="button" aria-expanded="true" aria-controls="faq-answer-1"><span data-i18n="faq.q1">How much does it cost?</span><span class="faq-icon" aria-hidden="true">−</span></button><div class="faq-answer" id="faq-answer-1" role="region"><div class="faq-answer-inner"><p data-i18n="faq.a1">Projects start from $300, monthly plans from $500. The free audit is always free.</p></div></div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2"><span data-i18n="faq.q2">How long does it take?</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer" id="faq-answer-2" role="region"><div class="faq-answer-inner"><p data-i18n="faq.a2">A dashboard is ready in 3 to 7 days.</p></div></div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3"><span data-i18n="faq.q3">Which tools do you use?</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer" id="faq-answer-3" role="region"><div class="faq-answer-inner"><p data-i18n="faq.a3">E-commerce platforms, Klaviyo, Google Analytics, Meta Ads, Looker Studio, Power BI, Python.</p></div></div></div><div class="faq-item"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4"><span data-i18n="faq.q4">Can you work with clients in the USA and Dubai?</span><span class="faq-icon" aria-hidden="true">+</span></button><div class="faq-answer" id="faq-answer-4" role="region"><div class="faq-answer-inner"><p data-i18n="faq.a4">Yes, fully remote, with flexible hours that overlap with US and Gulf time zones.</p></div></div></div></div></div></section>
+
+    <section class="markets-section" id="markets">
+      <div class="container">
+        <div class="section-header reveal"><div class="section-heading"><span class="section-kicker" data-i18n="markets.kicker">Our markets</span><h2 data-i18n="markets.title">Where we work</h2><p data-i18n="markets.intro">We help e-commerce brands in the United States, Switzerland and the United Arab Emirates.</p></div></div>
+        <div class="markets-layout">
+          <div class="market-map-frame reveal">
+            <div class="map-canvas">
+              <img class="world-map-base" src="./world-map.svg" alt="" aria-hidden="true">
+              <svg class="world-map-overlay" viewBox="0 0 2000 1001" role="img" aria-labelledby="market-map-title" preserveAspectRatio="none">
+                <title id="market-map-title" data-i18n="markets.mapAria">Metrio markets and headquarters map</title>
+                <defs><linearGradient id="marketGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563EB"></stop><stop offset="1" stop-color="#22D3EE"></stop></linearGradient></defs>
+                <g class="connection-lines" aria-hidden="true"><path d="M1115 344 Q850 230 500 350"></path><path d="M1115 344 Q1080 320 1047 319"></path><path d="M1115 344 Q1210 370 1300 444"></path></g>
+                <g class="market-countries" aria-hidden="true"><path class="market-country" d="M317.556,306.148L355.673,302.682L394.447,301.514L433.221,302.682L471.339,306.148L490.889,310.926L502.222,311.648L509.01,310.021L528.466,317.814L541.384,326.44L543.68,336.309L538.222,344.593L542.004,346.842L561.448,340.239L560.157,336.891L573.222,335.988L584.072,328.368L602.75,328.325L607.444,325.815L615.349,314.771L623.386,316.891L623.381,324.466L627.014,327.606L627.974,329.428L610.466,335.681L606.584,340.23L611.305,347.053L595.131,349.367L600.306,350.981L588.989,352.659L587.898,357.763L579.322,367.609L574.763,363.272L579.292,380.866L575.76,384.99L563.587,390.252L548.132,403.701L547.275,407.648L555.241,429.037L553.439,438.336L549.044,438.363L539.693,423.447L540.833,419.759L534.947,412.056L527.173,413.725L520,409.481L502.256,410.815L503.288,416.372L495.11,416.434L490.962,413.498L482.076,412.905L473.944,414.593L463.366,421.107L459.056,426.259L458.167,434.815L449.889,431.87L447.111,425.37L439.124,415.144L430.667,413.037L427.167,417.426L419.684,414.082L416.459,408.126L408.291,401.956L398.667,401.954L398.656,404.247L383.202,404.289L362.139,397.674L349.29,397.618L341.556,389.327L331.29,386.997L319.181,369.749L312.627,361.972L308.9,354.408L309.924,345.039L308.151,340.781L311.673,325.462L307.966,309.594L316,311.481L320.333,315.259Z"></path><path class="market-country" d="M1053.301,314.342L1058.015,317.851L1043.089,323.79L1038.02,322.864L1033.541,318.783L1041.482,313.811Z"></path><path class="market-country" d="M1286.553,443.673L1300.044,444.361L1311.505,433.618L1312.561,435.511L1313.316,439.9L1310.479,439.921L1306.713,452.213L1305.593,453.387L1288.893,450.586Z"></path></g>
+                <g aria-hidden="true"><circle class="market-dot" cx="500" cy="350" r="10"></circle><circle class="market-dot" cx="1047" cy="319" r="10"></circle><circle class="market-dot" cx="1300" cy="444" r="10"></circle><circle class="market-dot hq-dot" cx="1115" cy="344" r="10"></circle></g>
+                <g class="map-labels"><text class="map-label" x="530" y="340" data-i18n="markets.usaLabel">USA</text><text class="map-label" x="1080" y="300" data-i18n="markets.switzerlandLabel">Switzerland</text><text class="map-label" x="1330" y="472" data-i18n="markets.uaeLabel">UAE</text><text class="map-label" x="1140" y="380" data-i18n="markets.hqLabel">Metrio HQ</text></g>
+              </svg>
+            </div>
+            <p class="map-source" data-i18n="markets.mapSource">Map geometry: Natural Earth via VectorAtlas.</p>
+          </div>
+          <div class="market-cards">
+            <article class="market-card reveal"><h3 data-i18n="markets.usaTitle">United States</h3><p data-i18n="markets.usaText">E-commerce brands scaling with data.</p></article>
+            <article class="market-card reveal"><h3 data-i18n="markets.switzerlandTitle">Switzerland</h3><p data-i18n="markets.switzerlandText">Precision analytics for ambitious teams.</p></article>
+            <article class="market-card reveal"><h3 data-i18n="markets.uaeTitle">United Arab Emirates</h3><p data-i18n="markets.uaeText">Clear growth systems for regional leaders.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="contact-section" id="contact">
       <div class="container contact-layout">
-        <div class="contact-card reveal"><span class="section-kicker">Let’s find your next lever</span><h2>Get a clearer view of your business.</h2><p>Tell us where your company feels stuck. We’ll come back with a practical first read and the best next step.</p><div class="contact-links"><a class="contact-link" href="mailto:adimemeti97@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg><span><small>Email</small><strong>adimemeti97@gmail.com</strong></span></a><a class="contact-link" href="https://wa.me/38348240869" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 11.5a7.8 7.8 0 0 1-11.5 6.8L4 20l1.7-4.3A7.8 7.8 0 1 1 20 11.5Z"></path><path d="M8.2 8.9c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.5.6c.7 1.2 1.5 1.8 2.8 2.4l.5-.6c.2-.2.4-.3.7-.2l1.4.6c.3.1.4.3.4.5 0 .8-.3 1.2-.7 1.4-.4.2-1.2.3-2.6-.3-2.2-1-3.7-2.6-4.7-4.7-.5-1.1-.4-1.6-.2-1.8Z"></path></svg><span><small>WhatsApp</small><strong>+383 48 240 869</strong></span></a><a class="contact-link" href="tel:+38348240869"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 3h3l1.3 4-2 1.5a15 15 0 0 0 6.2 6.2l1.5-2 4 1.3v3c0 1.1-.9 2-2 2C11.3 19 5 12.7 5 5a2 2 0 0 1 2-2Z"></path></svg><span><small>Phone</small><strong>+383 48 240 869</strong></span></a></div></div>
-        <div class="contact-card form-card reveal"><h3>Start with a free audit</h3><p class="form-intro">Share a few details about your company and we’ll reply with a clear starting point.</p><form action="https://formspree.io/f/xwllbdab" method="POST"><input type="hidden" name="_subject" value="New Metrio audit request"><div class="form-grid"><div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Smith" required></div><div class="field"><label for="store-url">Company or store URL</label><input id="store-url" name="company_url" type="url" autocomplete="url" placeholder="https://yourcompany.com" required></div><div class="field field-full"><label for="message">What would you like to improve?</label><textarea id="message" name="message" placeholder="Tell us about your goals, current setup, or biggest data question..." required></textarea></div></div><div class="form-actions"><button class="button button-primary" type="submit">Request my audit <span aria-hidden="true">↗</span></button><p class="form-note" role="status"><span aria-hidden="true">✓</span> No pressure. Just a useful first conversation.</p></div></form></div>
+        <div class="contact-card reveal"><span class="section-kicker" data-i18n="contact.kicker">Let’s find your next lever</span><h2 data-i18n="contact.title">Get a clearer view of your business.</h2><p data-i18n="contact.intro">Tell us where your company feels stuck. We’ll come back with a practical first read and the best next step.</p><div class="contact-links"><a class="contact-link" href="mailto:adimemeti97@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg><span><small data-i18n="contact.emailLabel">Email</small><strong>adimemeti97@gmail.com</strong></span></a><a class="contact-link" href="https://wa.me/38348240869" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 11.5a7.8 7.8 0 0 1-11.5 6.8L4 20l1.7-4.3A7.8 7.8 0 1 1 20 11.5Z"></path><path d="M8.2 8.9c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.5.6c.7 1.2 1.5 1.8 2.8 2.4l.5-.6c.2-.2.4-.3.7-.2l1.4.6c.3.1.4.3.4.5 0 .8-.3 1.2-.7 1.4-.4.2-1.2.3-2.6-.3-2.2-1-3.7-2.6-4.7-4.7-.5-1.1-.4-1.6-.2-1.8Z"></path></svg><span><small data-i18n="contact.whatsappLabel">WhatsApp</small><strong>+383 48 240 869</strong></span></a><a class="contact-link" href="tel:+38348240869"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 3h3l1.3 4-2 1.5a15 15 0 0 0 6.2 6.2l1.5-2 4 1.3v3c0 1.1-.9 2-2 2C11.3 19 5 12.7 5 5a2 2 0 0 1 2-2Z"></path></svg><span><small data-i18n="contact.phoneLabel">Phone</small><strong>+383 48 240 869</strong></span></a></div></div>
+        <div class="contact-card form-card reveal"><h3 data-i18n="contact.formTitle">Start with a free audit</h3><p class="form-intro" data-i18n="contact.formIntro">Share a few details about your company and we’ll reply with a clear starting point.</p><form action="https://formspree.io/f/xwllbdab" method="POST"><input type="hidden" name="_subject" value="New Metrio audit request"><div class="form-grid"><div class="field"><label for="name" data-i18n="contact.nameLabel">Your name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Jane Smith" data-i18n-placeholder="contact.namePlaceholder" required></div><div class="field"><label for="store-url" data-i18n="contact.urlLabel">Company or store URL</label><input id="store-url" name="company_url" type="url" autocomplete="url" placeholder="https://yourcompany.com" data-i18n-placeholder="contact.urlPlaceholder" required></div><div class="field field-full"><label for="message" data-i18n="contact.messageLabel">What would you like to improve?</label><textarea id="message" name="message" placeholder="Tell us about your goals, current setup, or biggest data question..." data-i18n-placeholder="contact.messagePlaceholder" required></textarea></div></div><div class="form-actions"><button class="button button-primary" type="submit"><span data-i18n="contact.submit">Request my audit</span></button><p class="form-note" role="status"><span aria-hidden="true">✓</span><span data-i18n="contact.formNote">No pressure. Just a useful first conversation.</span></p></div></form></div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container"><div class="footer-main"><a class="footer-brand" href="#top" aria-label="Back to Metrio home"><img src="./logo.png" alt="Metrio logo"><span><strong>Metrio</strong><p>Data &amp; AI for smarter business growth.</p></span></a><div class="footer-meta"><a href="mailto:adimemeti97@gmail.com">adimemeti97@gmail.com</a><a href="https://wa.me/38348240869" target="_blank" rel="noopener">WhatsApp</a></div></div><div class="footer-bottom"><span>© 2026 Metrio. All rights reserved.</span><span>Analytics, predictions &amp; Shopify growth systems for ambitious companies.</span></div></div></footer>
-  <a class="floating-whatsapp" href="https://wa.me/38348240869" target="_blank" rel="noopener" aria-label="Chat with Metrio on WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M20 11.5a7.8 7.8 0 0 1-11.5 6.8L4 20l1.7-4.3A7.8 7.8 0 1 1 20 11.5Z"></path><path d="M8.2 8.9c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.5.6c.7 1.2 1.5 1.8 2.8 2.4l.5-.6c.2-.2.4-.3.7-.2l1.4.6c.3.1.4.3.4.5 0 .8-.3 1.2-.7 1.4-.4.2-1.2.3-2.6-.3-2.2-1-3.7-2.6-4.7-4.7-.5-1.1-.4-1.6-.2-1.8Z"></path></svg></a>
+  <footer class="site-footer"><div class="container"><div class="footer-main"><a class="footer-brand" href="#top" aria-label="Back to Metrio home"><img src="./metrio-icon.svg" alt="Metrio"><span class="footer-brand-name">Metrio</span></a><div class="footer-meta"><a href="mailto:adimemeti97@gmail.com">adimemeti97@gmail.com</a><a href="https://wa.me/38348240869" target="_blank" rel="noopener" data-i18n="footer.whatsapp">WhatsApp</a></div></div><div class="footer-bottom"><span data-i18n="footer.rights">© 2026 Metrio. All rights reserved.</span><span data-i18n="footer.description">Analytics, predictions &amp; e-commerce growth systems for ambitious companies.</span></div></div></footer>
+  <a class="floating-whatsapp" href="https://wa.me/38348240869" target="_blank" rel="noopener" aria-label="Chat with Metrio on WhatsApp" data-i18n-aria-label="footer.chat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M20 11.5a7.8 7.8 0 0 1-11.5 6.8L4 20l1.7-4.3A7.8 7.8 0 1 1 20 11.5Z"></path><path d="M8.2 8.9c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.6 1.4c.1.3.1.5-.1.7l-.5.6c.7 1.2 1.5 1.8 2.8 2.4l.5-.6c.2-.2.4-.3.7-.2l1.4.6c.3.1.4.3.4.5 0 .8-.3 1.2-.7 1.4-.4.2-1.2.3-2.6-.3-2.2-1-3.7-2.6-4.7-4.7-.5-1.1-.4-1.6-.2-1.8Z"></path></svg></a>
 
   <script>
     (() => {
@@ -417,15 +470,106 @@
       const header = document.querySelector('.site-header');
       const menuToggle = document.querySelector('.mobile-toggle');
       const nav = document.querySelector('.nav-links');
+      const languageSelect = document.querySelector('#language-select');
+      const pageTitle = document.querySelector('#page-title');
+      const metaDescription = document.querySelector('#meta-description');
       const navLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
       const trackedSections = [...document.querySelectorAll('main section[id]')];
       const reveals = [...document.querySelectorAll('.reveal')];
-      root.classList.add('js-ready');
 
-      const setMenu = (open) => { nav.classList.toggle('open', open); menuToggle.setAttribute('aria-expanded', String(open)); menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu'); };
-      menuToggle.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
+      const translations = {
+        en: {
+          meta: { title: 'Metrio | Data & AI for clearer decisions', description: 'Metrio helps e-commerce brands analyze performance, predict what is next, and turn scattered data into practical growth actions.' },
+          common: { skip: 'Skip to content' },
+          nav: { services: 'Services', process: 'Process', results: 'Results', markets: 'Markets', contact: 'Contact', audit: 'Free audit', open: 'Open menu', close: 'Close menu' },
+          hero: { eyebrow: 'Data & AI systems for modern companies', titleStart: 'We turn complex data into', titleHighlight: 'clearer decisions.', description: 'Metrio helps e-commerce brands analyze performance, predict what is next and turn scattered data into practical growth actions.', audit: 'Book a free audit', whatsapp: 'WhatsApp us', note: 'Clear recommendations, practical implementation, no long-term lock-in.', visualAria: 'Illustrative Metrio data and AI visual', chartAria: 'Illustrative rising data trend', cardRevenue: 'Revenue', cardRoas: 'Return on ad spend', cardChurn: 'Churn' },
+          trust: { aria: 'Tools Metrio works with', label: 'Built around your stack', ecommerce: 'E-commerce data' },
+          services: { kicker: 'What we solve', title: 'Less guesswork. More confident decisions.', intro: 'Your business already creates the signals. We connect them, make them useful, and turn them into your next best actions.', side: 'Designed for teams that want senior data thinking without adding another full-time hire.', card1Title: 'Analytics & BI Dashboards', card1Text: 'One clear view of performance, trends, and the signals your team needs to act on next.', card2Title: 'Customer & Cohort Intelligence', card2Text: 'Understand segments, lifetime value, retention, and the audiences with the most room to grow.', card3Title: 'Data Quality & Attribution', card3Text: 'Repair the gaps between your systems so reporting is consistent, trusted, and ready for better decisions.', card4Title: 'Forecasting & Predictive Models', card4Text: 'Use practical models to anticipate demand, churn, repeat purchase, and the next growth opportunity.', offerBadge: 'E-commerce offer', offerStrong: 'For e-commerce brands:', offerText: 'connect store analytics, LTV, attribution, and repeat-purchase insights to the wider business picture.', offerLink: 'Explore the offer' },
+          process: { kicker: 'How it works', title: 'A sharper growth loop in three steps.', intro: 'Start with what is already in your business. We make the next decision easier, then help your team build on it.', step1Title: 'Free audit', step1Text: 'We review your data, tracking, reporting, and growth bottlenecks in a focused call.', step2Title: 'We build', step2Text: 'We prioritize the highest-leverage fixes and build the dashboards, segments, or models you need.', step3Title: 'You grow', step3Text: 'Your team gets clear reporting, practical recommendations, and a system that gets smarter over time.' },
+          results: { kicker: 'What to measure', title: 'Make progress visible.', intro: 'Use the right numbers to connect your work to growth. Replace the placeholders below with verified results as your case studies develop.', label: 'Placeholder outcome', card1Text: 'repeat purchases', card2Text: 'blended ROAS clarity', card3Text: 'avoidable churn', note: 'Illustrative result — replace with a verified case study.' },
+          faq: { aria: 'Frequently asked questions', kicker: 'Good to know', title: 'Questions, answered.', intro: 'Not sure where to start? A free audit is the easiest way to understand what will create the most value for your company.', ask: 'Ask us directly', q1: 'How much does it cost?', a1: 'Projects start from $300, monthly plans from $500. The free audit is always free.', q2: 'How long does it take?', a2: 'A dashboard is ready in 3 to 7 days.', q3: 'Which tools do you use?', a3: 'E-commerce platforms, Klaviyo, Google Analytics, Meta Ads, Looker Studio, Power BI, Python.', q4: 'Can you work with clients in the USA and Dubai?', a4: 'Yes, fully remote, with flexible hours that overlap with US and Gulf time zones.' },
+          markets: { kicker: 'Our markets', title: 'Where we work', intro: 'We help e-commerce brands in the United States, Switzerland and the United Arab Emirates.', mapAria: 'Metrio markets and headquarters map', mapSource: 'Map geometry: Natural Earth via VectorAtlas.', usaLabel: 'USA', switzerlandLabel: 'Switzerland', uaeLabel: 'UAE', hqLabel: 'Metrio HQ', usaTitle: 'United States', usaText: 'E-commerce brands scaling with data.', switzerlandTitle: 'Switzerland', switzerlandText: 'Precision analytics for ambitious teams.', uaeTitle: 'United Arab Emirates', uaeText: 'Clear growth systems for regional leaders.' },
+          contact: { kicker: 'Let’s find your next lever', title: 'Get a clearer view of your business.', intro: 'Tell us where your company feels stuck. We’ll come back with a practical first read and the best next step.', emailLabel: 'Email', whatsappLabel: 'WhatsApp', phoneLabel: 'Phone', formTitle: 'Start with a free audit', formIntro: 'Share a few details about your company and we’ll reply with a clear starting point.', nameLabel: 'Your name', namePlaceholder: 'Jane Smith', urlLabel: 'Company or store URL', urlPlaceholder: 'https://yourcompany.com', messageLabel: 'What would you like to improve?', messagePlaceholder: 'Tell us about your goals, current setup, or biggest data question...', submit: 'Request my audit', formNote: 'No pressure. Just a useful first conversation.', success: 'Thanks — your request is on its way.' },
+          footer: { whatsapp: 'WhatsApp', rights: '© 2026 Metrio. All rights reserved.', description: 'Analytics, predictions & e-commerce growth systems for ambitious companies.', chat: 'Chat with Metrio on WhatsApp' }
+        },
+        ar: {
+          meta: { title: 'ميتريو | بيانات وذكاء اصطناعي لقرارات أوضح', description: 'تساعد ميتريو علامات التجارة الإلكترونية على تحليل الأداء وتوقّع الخطوة التالية وتحويل البيانات المتناثرة إلى إجراءات عملية للنمو.' },
+          common: { skip: 'انتقل إلى المحتوى' },
+          nav: { services: 'الخدمات', process: 'المنهجية', results: 'النتائج', markets: 'الأسواق', contact: 'تواصل معنا', audit: 'تدقيق مجاني', open: 'فتح القائمة', close: 'إغلاق القائمة' },
+          hero: { eyebrow: 'أنظمة بيانات وذكاء اصطناعي للشركات الحديثة', titleStart: 'نحوّل البيانات المعقدة إلى', titleHighlight: 'قرارات أوضح.', description: 'تساعد ميتريو علامات التجارة الإلكترونية على تحليل الأداء، وتوقّع الخطوة التالية، وتحويل البيانات المتناثرة إلى إجراءات عملية للنمو.', audit: 'احجز تدقيقًا مجانيًا', whatsapp: 'تواصل عبر واتساب', note: 'توصيات واضحة، وتنفيذ عملي، ومن دون التزام طويل الأمد.', visualAria: 'تصوّر توضيحي لبيانات وذكاء ميتريو الاصطناعي', chartAria: 'مخطط توضيحي لاتجاه بيانات صاعد', cardRevenue: 'الإيرادات', cardRoas: 'العائد على الإنفاق الإعلاني', cardChurn: 'معدل التسرب' },
+          trust: { aria: 'الأدوات التي تعمل معها ميتريو', label: 'مبني حول أدواتك', ecommerce: 'بيانات التجارة الإلكترونية' },
+          services: { kicker: 'ما الذي نحلّه', title: 'تخمين أقل. قرارات أكثر ثقة.', intro: 'ينتج عملك الإشارات اللازمة بالفعل. نحن نربطها ونجعلها مفيدة ونحوّلها إلى خطواتك العملية التالية.', side: 'مصمم للفرق التي تريد خبرة بيانات متقدمة من دون إضافة موظف بدوام كامل.', card1Title: 'لوحات التحليلات وذكاء الأعمال', card1Text: 'رؤية واضحة للأداء والاتجاهات والإشارات التي يحتاج فريقك إلى التحرك بناءً عليها.', card2Title: 'ذكاء العملاء والمجموعات', card2Text: 'افهم الشرائح والقيمة العمرية والاحتفاظ بالعملاء والجمهور الأكثر قابلية للنمو.', card3Title: 'جودة البيانات ونسب الإسناد', card3Text: 'أصلح الفجوات بين أنظمتك لتصبح التقارير متسقة وموثوقة وجاهزة لقرارات أفضل.', card4Title: 'التنبؤ والنماذج التنبؤية', card4Text: 'استخدم نماذج عملية لتوقّع الطلب والتسرب والشراء المتكرر وفرصة النمو التالية.', offerBadge: 'حلول التجارة الإلكترونية', offerStrong: 'للعلامات التجارية الإلكترونية:', offerText: 'اربط تحليلات المتجر والقيمة العمرية ونسب الإسناد ورؤى الشراء المتكرر بصورة العمل الأوسع.', offerLink: 'اكتشف الحل' },
+          process: { kicker: 'كيف نعمل', title: 'دورة نمو أكثر وضوحًا في ثلاث خطوات.', intro: 'نبدأ بما هو موجود في عملك. نجعل القرار التالي أسهل ثم نساعد فريقك على البناء عليه.', step1Title: 'تدقيق مجاني', step1Text: 'نراجع بياناتك وتتبعك وتقاريرك وعوائق النمو في مكالمة مركزة.', step2Title: 'نبني الحل', step2Text: 'نحدد الإصلاحات الأعلى أثرًا ونبني لوحات البيانات أو الشرائح أو النماذج التي تحتاجها.', step3Title: 'تنمو بثقة', step3Text: 'يحصل فريقك على تقارير واضحة وتوصيات عملية ونظام يصبح أذكى مع الوقت.' },
+          results: { kicker: 'ما الذي نقيسه', title: 'اجعل التقدم مرئيًا.', intro: 'استخدم الأرقام الصحيحة لربط عملك بالنمو. استبدل الأرقام التوضيحية أدناه بنتائج موثقة مع تطور دراسات الحالة.', label: 'نتيجة توضيحية', card1Text: 'عمليات شراء متكررة', card2Text: 'وضوح العائد الإعلاني المركب', card3Text: 'تسرب يمكن تفاديه', note: 'نتيجة توضيحية — استبدلها بدراسة حالة موثقة.' },
+          faq: { aria: 'الأسئلة الشائعة', kicker: 'معلومة مهمة', title: 'إجابات عن أسئلتك.', intro: 'لست متأكدًا من نقطة البداية؟ التدقيق المجاني هو أسهل طريقة لمعرفة ما سيحقق أكبر قيمة لشركتك.', ask: 'اسألنا مباشرة', q1: 'كم تبلغ التكلفة؟', a1: 'تبدأ المشاريع من 300 دولار، والخطط الشهرية من 500 دولار. التدقيق المجاني مجاني دائمًا.', q2: 'كم يستغرق التنفيذ؟', a2: 'تكون لوحة البيانات جاهزة خلال 3 إلى 7 أيام.', q3: 'ما الأدوات التي تستخدمونها؟', a3: 'منصات التجارة الإلكترونية، Klaviyo، Google Analytics، Meta Ads، Looker Studio، Power BI وPython.', q4: 'هل يمكنكم العمل مع عملاء في الولايات المتحدة ودبي؟', a4: 'نعم، نعمل عن بُعد بالكامل مع ساعات مرنة تتداخل مع التوقيتين الأمريكي والخليجي.' },
+          markets: { kicker: 'أسواقنا', title: 'أين نعمل', intro: 'نساعد علامات التجارة الإلكترونية في الولايات المتحدة وسويسرا والإمارات العربية المتحدة.', mapAria: 'خريطة أسواق ميتريو ومقرها الرئيسي', mapSource: 'بيانات الخريطة: Natural Earth عبر VectorAtlas.', usaLabel: 'الولايات المتحدة', switzerlandLabel: 'سويسرا', uaeLabel: 'الإمارات', hqLabel: 'مقر ميتريو', usaTitle: 'الولايات المتحدة', usaText: 'علامات تجارة إلكترونية تتوسع بالبيانات.', switzerlandTitle: 'سويسرا', switzerlandText: 'تحليلات دقيقة للفرق الطموحة.', uaeTitle: 'الإمارات العربية المتحدة', uaeText: 'أنظمة نمو واضحة للقادة الإقليميين.' },
+          contact: { kicker: 'لنجد فرصتك التالية', title: 'رؤية أوضح لعملك.', intro: 'أخبرنا أين تواجه شركتك صعوبة. سنعود إليك بقراءة أولية عملية وأفضل خطوة تالية.', emailLabel: 'البريد الإلكتروني', whatsappLabel: 'واتساب', phoneLabel: 'الهاتف', formTitle: 'ابدأ بتدقيق مجاني', formIntro: 'شارك بعض التفاصيل عن شركتك وسنرد عليك بنقطة بداية واضحة.', nameLabel: 'اسمك', namePlaceholder: 'سارة أحمد', urlLabel: 'رابط الشركة أو المتجر', urlPlaceholder: 'https://yourcompany.com', messageLabel: 'ما الذي ترغب في تحسينه؟', messagePlaceholder: 'أخبرنا عن أهدافك أو إعدادك الحالي أو أكبر سؤال لديك حول البيانات...', submit: 'اطلب تدقيقي', formNote: 'من دون ضغط. مجرد محادثة أولى مفيدة.', success: 'شكرًا — تم إرسال طلبك.' },
+          footer: { whatsapp: 'واتساب', rights: '© 2026 ميتريو. جميع الحقوق محفوظة.', description: 'تحليلات وتنبؤات وأنظمة نمو بالتجارة الإلكترونية للشركات الطموحة.', chat: 'تواصل مع ميتريو عبر واتساب' }
+        },
+        de: {
+          meta: { title: 'Metrio | Daten & KI für klarere Entscheidungen', description: 'Metrio unterstützt E-Commerce-Marken dabei, Leistung zu analysieren, Entwicklungen vorherzusagen und verstreute Daten in konkrete Wachstumsmaßnahmen zu verwandeln.' },
+          common: { skip: 'Zum Inhalt springen' },
+          nav: { services: 'Leistungen', process: 'Vorgehen', results: 'Ergebnisse', markets: 'Märkte', contact: 'Kontakt', audit: 'Kostenloses Audit', open: 'Menü öffnen', close: 'Menü schließen' },
+          hero: { eyebrow: 'Daten- & KI-Systeme für moderne Unternehmen', titleStart: 'Wir verwandeln komplexe Daten in', titleHighlight: 'klarere Entscheidungen.', description: 'Metrio unterstützt E-Commerce-Marken dabei, ihre Leistung zu analysieren, Entwicklungen vorherzusagen und verstreute Daten in konkrete Wachstumsmaßnahmen zu verwandeln.', audit: 'Kostenloses Audit buchen', whatsapp: 'Über WhatsApp schreiben', note: 'Klare Empfehlungen, praktische Umsetzung, keine langfristige Bindung.', visualAria: 'Illustrative Darstellung von Metrio-Daten und KI', chartAria: 'Illustrativer steigender Datenverlauf', cardRevenue: 'Umsatz', cardRoas: 'Werbekostenrendite', cardChurn: 'Abwanderung' },
+          trust: { aria: 'Tools, mit denen Metrio arbeitet', label: 'Auf Ihren Stack ausgerichtet', ecommerce: 'E-Commerce-Daten' },
+          services: { kicker: 'Wobei wir helfen', title: 'Weniger Vermutungen. Sicherere Entscheidungen.', intro: 'Ihr Unternehmen erzeugt die wichtigen Signale bereits. Wir verbinden sie, machen sie nutzbar und leiten daraus die nächsten Schritte ab.', side: 'Für Teams, die erfahrene Datenkompetenz möchten, ohne eine weitere Vollzeitstelle aufzubauen.', card1Title: 'Analytics- & BI-Dashboards', card1Text: 'Eine klare Sicht auf Leistung, Trends und die Signale, auf deren Basis Ihr Team als Nächstes handeln sollte.', card2Title: 'Kunden- & Kohortenanalyse', card2Text: 'Verstehen Sie Segmente, Customer Lifetime Value, Bindung und Zielgruppen mit dem größten Potenzial.', card3Title: 'Datenqualität & Attribution', card3Text: 'Schließen Sie Lücken zwischen Ihren Systemen, damit Reports konsistent, verlässlich und entscheidungsfähig sind.', card4Title: 'Prognosen & prädiktive Modelle', card4Text: 'Nutzen Sie praxisnahe Modelle für Nachfrage, Abwanderung, Wiederkäufe und die nächste Wachstumschance.', offerBadge: 'E-Commerce-Angebot', offerStrong: 'Für E-Commerce-Marken:', offerText: 'Verbinden Sie Shop-Analytics, LTV, Attribution und Wiederkaufsdaten mit dem größeren Geschäftsbild.', offerLink: 'Angebot ansehen' },
+          process: { kicker: 'So arbeiten wir', title: 'In drei Schritten zu einem klareren Wachstumszyklus.', intro: 'Wir starten mit dem, was in Ihrem Unternehmen bereits vorhanden ist. So wird die nächste Entscheidung einfacher und Ihr Team kann darauf aufbauen.', step1Title: 'Kostenloses Audit', step1Text: 'Wir prüfen Daten, Tracking, Reporting und Wachstumsbarrieren in einem fokussierten Gespräch.', step2Title: 'Wir bauen', step2Text: 'Wir priorisieren die wirkungsvollsten Verbesserungen und entwickeln die Dashboards, Segmente oder Modelle, die Sie benötigen.', step3Title: 'Sie wachsen', step3Text: 'Ihr Team erhält klare Reports, praktische Empfehlungen und ein System, das mit der Zeit besser wird.' },
+          results: { kicker: 'Was wir messen', title: 'Fortschritt sichtbar machen.', intro: 'Verbinden Sie Ihre Arbeit mit Wachstum durch die richtigen Kennzahlen. Ersetzen Sie die Platzhalter unten durch verifizierte Ergebnisse.', label: 'Platzhalter-Ergebnis', card1Text: 'Wiederkäufe', card2Text: 'Klarheit beim ROAS', card3Text: 'vermeidbare Abwanderung', note: 'Beispielwert — durch eine verifizierte Fallstudie ersetzen.' },
+          faq: { aria: 'Häufig gestellte Fragen', kicker: 'Gut zu wissen', title: 'Ihre Fragen, beantwortet.', intro: 'Sie wissen nicht, wo Sie anfangen sollen? Ein kostenloses Audit zeigt am schnellsten, wo Ihr Unternehmen den größten Mehrwert erzielen kann.', ask: 'Direkt fragen', q1: 'Was kostet das?', a1: 'Projekte starten ab 300 $, monatliche Pakete ab 500 $. Das kostenlose Audit bleibt immer kostenlos.', q2: 'Wie lange dauert es?', a2: 'Ein Dashboard ist in 3 bis 7 Tagen fertig.', q3: 'Welche Tools nutzen Sie?', a3: 'E-Commerce-Plattformen, Klaviyo, Google Analytics, Meta Ads, Looker Studio, Power BI und Python.', q4: 'Arbeiten Sie mit Kunden in den USA und Dubai?', a4: 'Ja. Wir arbeiten vollständig remote und mit flexiblen Zeiten, die sich mit US-amerikanischen und Golf-Zeitzonen überschneiden.' },
+          markets: { kicker: 'Unsere Märkte', title: 'Wo wir arbeiten', intro: 'Wir unterstützen E-Commerce-Marken in den Vereinigten Staaten, der Schweiz und den Vereinigten Arabischen Emiraten.', mapAria: 'Karte der Metrio-Märkte und des Hauptsitzes', mapSource: 'Kartengeometrie: Natural Earth über VectorAtlas.', usaLabel: 'USA', switzerlandLabel: 'Schweiz', uaeLabel: 'VAE', hqLabel: 'Metrio HQ', usaTitle: 'Vereinigte Staaten', usaText: 'E-Commerce-Marken, die mit Daten skalieren.', switzerlandTitle: 'Schweiz', switzerlandText: 'Präzise Analysen für ambitionierte Teams.', uaeTitle: 'Vereinigte Arabische Emirate', uaeText: 'Klare Wachstumssysteme für regionale Marktführer.' },
+          contact: { kicker: 'Finden wir Ihren nächsten Hebel', title: 'Schaffen Sie eine klarere Sicht auf Ihr Unternehmen.', intro: 'Sagen Sie uns, wo Ihr Unternehmen feststeckt. Wir melden uns mit einer praktischen ersten Einschätzung und dem besten nächsten Schritt.', emailLabel: 'E-Mail', whatsappLabel: 'WhatsApp', phoneLabel: 'Telefon', formTitle: 'Mit einem kostenlosen Audit starten', formIntro: 'Teilen Sie einige Details zu Ihrem Unternehmen. Wir antworten mit einem klaren Ausgangspunkt.', nameLabel: 'Ihr Name', namePlaceholder: 'Anna Müller', urlLabel: 'Unternehmens- oder Shop-URL', urlPlaceholder: 'https://ihrunternehmen.de', messageLabel: 'Was möchten Sie verbessern?', messagePlaceholder: 'Erzählen Sie uns von Ihren Zielen, Ihrem Setup oder Ihrer wichtigsten Datenfrage ...', submit: 'Audit anfragen', formNote: 'Kein Druck. Nur ein hilfreiches erstes Gespräch.', success: 'Vielen Dank — Ihre Anfrage ist unterwegs.' },
+          footer: { whatsapp: 'WhatsApp', rights: '© 2026 Metrio. Alle Rechte vorbehalten.', description: 'Analytics, Prognosen und E-Commerce-Wachstumssysteme für ambitionierte Unternehmen.', chat: 'Mit Metrio über WhatsApp chatten' }
+        }
+      };
+
+      const getValue = (language, key) => key.split('.').reduce((value, part) => value && value[part], translations[language]);
+      const getLanguage = () => {
+        try {
+          const saved = localStorage.getItem('metrio-language');
+          if (saved && translations[saved]) return saved;
+        } catch (error) { /* Storage can be unavailable in private browsing. */ }
+        const detected = (navigator.language || '').toLowerCase();
+        return detected.startsWith('ar') ? 'ar' : detected.startsWith('de') ? 'de' : 'en';
+      };
+
+      const applyLanguage = (language, persist = true) => {
+        const current = translations[language] ? language : 'en';
+        const dictionary = translations[current];
+        root.lang = current;
+        root.dir = current === 'ar' ? 'rtl' : 'ltr';
+        document.querySelectorAll('[data-i18n]').forEach((element) => {
+          const value = getValue(current, element.dataset.i18n);
+          if (typeof value === 'string') element.textContent = value;
+        });
+        document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
+          const value = getValue(current, element.dataset.i18nPlaceholder);
+          if (typeof value === 'string') element.setAttribute('placeholder', value);
+        });
+        document.querySelectorAll('[data-i18n-aria-label]').forEach((element) => {
+          const value = getValue(current, element.dataset.i18nAriaLabel);
+          if (typeof value === 'string') element.setAttribute('aria-label', value);
+        });
+        pageTitle.textContent = dictionary.meta.title;
+        metaDescription.setAttribute('content', dictionary.meta.description);
+        languageSelect.value = current;
+        if (persist) {
+          try { localStorage.setItem('metrio-language', current); } catch (error) { /* Storage can be unavailable. */ }
+        }
+        menuToggle.setAttribute('aria-label', getValue(current, navOpen ? 'nav.close' : 'nav.open'));
+      };
+
+      let navOpen = false;
+      const setMenu = (open) => {
+        navOpen = open;
+        nav.classList.toggle('open', open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+        const language = root.lang || 'en';
+        menuToggle.setAttribute('aria-label', getValue(language, open ? 'nav.close' : 'nav.open'));
+      };
+      menuToggle.addEventListener('click', () => setMenu(!navOpen));
       navLinks.forEach((link) => link.addEventListener('click', () => setMenu(false)));
-      document.addEventListener('click', (event) => { if (nav.classList.contains('open') && !nav.contains(event.target) && !menuToggle.contains(event.target)) setMenu(false); });
+      document.addEventListener('click', (event) => { if (navOpen && !nav.contains(event.target) && !menuToggle.contains(event.target)) setMenu(false); });
+      languageSelect.addEventListener('change', () => applyLanguage(languageSelect.value));
       const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 18);
       updateHeader();
       window.addEventListener('scroll', updateHeader, { passive: true });
@@ -448,9 +592,12 @@
         const shouldOpen = button.getAttribute('aria-expanded') !== 'true';
         faqButtons.forEach((otherButton) => setFaqState(otherButton, otherButton === button && shouldOpen));
       }));
+
       const auditForm = document.querySelector('form[action^="https://formspree.io/"]');
-      const formNote = document.querySelector('.form-note');
-      auditForm.addEventListener('submit', () => { formNote.innerHTML = '<span aria-hidden="true">✓</span> Thanks — your request is on its way.'; });
+      const formNoteText = document.querySelector('.form-note [data-i18n]');
+      auditForm.addEventListener('submit', () => { formNoteText.textContent = getValue(root.lang || 'en', 'contact.success'); });
+      root.classList.add('js-ready');
+      applyLanguage(getLanguage(), false);
     })();
   </script>
 </body>

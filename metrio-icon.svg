@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Metrio symbol</title>
+  <desc id="desc">A connected data network symbol in cyan, blue and magenta.</desc>
+  <defs>
+    <linearGradient id="metrioGradient" x1="0.18" y1="0.02" x2="0.78" y2="0.96">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="0.5" stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#D100D8"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="url(#metrioGradient)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M178 103v64M212 69h78"/>
+    <path d="M287 145h86"/>
+    <path d="M93 254l45 62M136 350l-28 52M157 341l67-26"/>
+    <path d="M318 289l-38 112M337 288l44 18M419 280l-29 57"/>
+    <path d="M402 281l28-30"/>
+  </g>
+  <g fill="url(#metrioGradient)">
+    <circle cx="178" cy="69" r="35"/>
+    <circle cx="318" cy="69" r="29"/>
+    <circle cx="178" cy="190" r="22"/>
+    <circle cx="101" cy="121" r="29"/>
+    <circle cx="254" cy="145" r="34"/>
+    <circle cx="432" cy="145" r="61"/>
+    <circle cx="57" cy="217" r="55"/>
+    <circle cx="138" cy="324" r="35"/>
+    <circle cx="106" cy="425" r="27"/>
+    <circle cx="232" cy="315" r="25"/>
+    <circle cx="280" cy="414" r="54"/>
+    <circle cx="322" cy="266" r="29"/>
+    <circle cx="381" cy="306" r="25"/>
+    <circle cx="431" cy="251" r="32"/>
+    <circle cx="390" cy="337" r="25"/>
+    <circle cx="200" cy="466" r="27"/>
+    <circle cx="468" cy="214" r="27"/>
+  </g>
+</svg>
